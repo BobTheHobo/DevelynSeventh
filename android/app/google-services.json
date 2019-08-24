@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "6356092898",
+    "firebase_url": "https://develynapp.firebaseio.com",
+    "project_id": "develynapp",
+    "storage_bucket": "develynapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6356092898:android:67f41d711a03e1ff",
+        "android_client_info": {
+          "package_name": "com.develynapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6356092898-hnsqhup6vhrdt7atri2gurtv73pbnhlm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.develynapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "6356092898-8e4e2qlel67rvpdanh1rg1f1n0che9h8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA07NrHC13Q--MUMTC1-aWSWN3yVLV_d6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6356092898-8e4e2qlel67rvpdanh1rg1f1n0che9h8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,8 +6,6 @@ import styles from './styles'
 import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin';
 import { firebase } from '@react-native-firebase/auth';
 
-import { PropTypes } from 'prop-types'
-
 /*
 const initialUser = {
     user: {
@@ -65,14 +63,9 @@ class Login extends Component {
                     onPress={this.onSignInPress}
                     disabled={isSigninInProgress}
                 />
-
                 {/*
-                <Button title='name' onPress={()=>{console.warn(firebase.auth().currentUser.displayName)}}/>
-
-                <Button title={'check'} onPress={() => this.confirm()}/>
+                <Button sytle={button} title={"Logout"} onPress={() => this.logout()}/>
                 
-                <Button sytle={button} title={"Logout"} onPress={() => this.signOut()}/>
-
                 <Text>{loggedInUser.user.name}</Text>
                 <Text>{loggedInUser.user.photo}</Text>
                 <Text>{loggedInUser.user.name}</Text>
@@ -81,21 +74,12 @@ class Login extends Component {
             </View>
         )
     }
-    confirm = () =>{
-        bob = firebase.auth().currentUser
-        console.warn(bob.displayName);
-    }
 
     onSignInPress = async () => {
         try{
             this.setState({ isSigninInProgress: true });
-
-            //initiate google sign-in
             await GoogleSignin.hasPlayServices();
             const user = await GoogleSignin.signIn();
-
-            //this.dispatchOnLogin(googleAuthResponse);
-
             // create a new firebase credential with the token
             const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken)
             // login with credential
@@ -109,23 +93,18 @@ class Login extends Component {
                 isSigninInProgress: false
             });
 
-            this.props.navigation.navigate('StudentSeventh');
+            this.props.navigation.navigate('Seventh');
         } catch (error){
             console.warn(error);
             this.handleSignInError(error);
         }
     }
 
-    dispatchOnLogin = (firebaseUserCredential) => {
-        this.props.UserLogin_onSuccess({
-        })
-    }
-
     isUserSignedIn = async () => {
         const isUserSignedIn = await GoogleSignin.isSignedIn();
         if (isUserSignedIn) {
             await this.getCurrentUserInfo();
-            this.props.navigation.navigate('StudentSeventh');
+            this.props.navigation.navigate('Seventh');
         }
     };
     
@@ -142,7 +121,6 @@ class Login extends Component {
         try{
             await GoogleSignin.revokeAccess();
             await GoogleSignin.signOut();
-            await firebase.auth().signOut();
         }catch(error){
             this.handleSignInError(error);
         }

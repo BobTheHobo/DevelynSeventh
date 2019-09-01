@@ -15,4 +15,8 @@ export default class LoginScreen extends Component {
             </View>
         )
     }
+    
+    static navigationOptions = {
+        header: null
+    }
 }

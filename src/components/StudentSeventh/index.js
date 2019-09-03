@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { View, Button, Text, TouchableOpacity, List, ListItem, FlatList } from 'react-native'
-import { Item } from 'native-base';
 import { BottomTabBar } from 'react-navigation';
 import styles from './styles'
 import { firebase } from '@react-native-firebase/firestore';
-import SignUpBotton from '../SignUpButton'
+import SignUpButton from '../SignUpButton'
 
 class StudentSeventh extends Component {
 
@@ -63,7 +62,7 @@ class StudentSeventh extends Component {
                     renderItem={({item, index}) => {
                         console.log(item);
                         return(
-                                <SignUpBotton teacher={item} number={index}/>
+                                <SignUpButton teacher={item} number={index+1}/>
                         )
                     }}
                     keyExtractor={(item, index) => item}

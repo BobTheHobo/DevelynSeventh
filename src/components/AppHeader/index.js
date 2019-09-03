@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text, TouchableHighlight, Image } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import { GoogleSignin } from 'react-native-google-signin';
 import { PropTypes } from 'prop-types';
 import { firebase } from '@react-native-firebase/auth';

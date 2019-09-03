@@ -24,5 +24,16 @@ export default StyleSheet.create({
         alignItems: 'flex-start',
         paddingLeft: 10,
         height: 40
+    },
+    split:{
+        flex: 1,
+        flexDirection: 'column'
+    },
+    name:{
+        flex: 3
+    },
+    plan:{
+        flex: 4
     }
+
 });

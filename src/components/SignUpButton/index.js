@@ -4,7 +4,7 @@ import styles from './styles'
  
 class SignUpButton extends Component {
     render() {
-        const { container, number, teacher } = styles;
+        const { container, number, teacher, split, name, plan } = styles;
         console.log(this.props);
 
         return (
@@ -14,7 +14,10 @@ class SignUpButton extends Component {
                         <Text>{this.props.number}</Text>
                     </View>
                     <View style={teacher}>
-                        <Text>{this.props.teacher}</Text>
+                        <View style={split}>
+                            <Text style={name}>{this.props.teacher}</Text>
+                            <Text style={plan}>This is my plan</Text>
+                        </View>
                     </View>
                 </View>
             </TouchableHighlight>

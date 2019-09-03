@@ -139,12 +139,17 @@ class Login extends Component {
     };
 
     signOut = async () => {
-        try{
-            await GoogleSignin.revokeAccess();
-            await GoogleSignin.signOut();
-            await firebase.auth().signOut();
-        }catch(error){
-            this.handleSignInError(error);
+        const signedIn = await GoogleSignin.isSignedIn();
+        if(signedIn){
+          try{
+              //await GoogleSignin.revokeAccess();
+              await GoogleSignin.signOut();
+              await firebase.auth().signOut();
+          }catch(error){
+              this.handleSignInError(error);
+          }
+        }else{
+          Alert.alert('You\'re already signed in')
         }
     }
 
@@ -179,7 +184,7 @@ class Login extends Component {
     showSignInError = alertMessage => {
         Alert.alert(
             'Google Signin Error',
-            {alertMessage},
+            '{alertMessage}',
             [{text:'OK'}],
             {
                 cancelable: false

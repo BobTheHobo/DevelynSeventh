@@ -12,14 +12,14 @@ export default StyleSheet.create({
     title: {
         fontSize: 25,
         textAlign: 'center',
-        padding: 10
+        padding: 10,
     },
     infoDisp: {
-        flex: 3,
+        flex: 4,
         backgroundColor: 'steelblue'
     },
     buttons: {
-        flex: 10,
+        flex: 13,
         backgroundColor: 'powderblue'
     },
     flist: {

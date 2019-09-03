@@ -5,7 +5,6 @@ import StudentSeventh from '../../components/StudentSeventh'
 
 //Styling
 import { View, Text, Button } from 'react-native'
-import { Container, Content} from "native-base";
 import styles from './styles'
 
 //Firebase+Google
@@ -28,9 +27,9 @@ class StudentSeventhScreen extends Component {
                 </View>
 
                 <View style={buttons}> 
-                    <Text>Sign up for Seventh</Text>
+                    <Text style={{fontFamily: 'normal'}}>Sign up for Seventh</Text>
                     <StudentSeventh />
-                    <Button title='name' onPress={()=>{console.warn(firebase.auth().currentUser.displayName)}}/>
+                    {/*<Button title='name' onPress={()=>{console.warn(firebase.auth().currentUser.displayName)}}/>*/}
                     <Button title={'Logout'} onPress={ () => this.signOut() }/>
                 </View>
 

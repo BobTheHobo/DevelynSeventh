@@ -1,12 +1,15 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 //import pages
 import Sidebar from '../components/Sidebar';
 import LoginScreen from '../screens/LoginScreen';
 import StudentSeventhScreen from '../screens/StudentSeventhScreen';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import React from 'react';
 
-const AppStackNavigator = createStackNavigator({
+export const AppStackNavigator = createStackNavigator({
     Login: LoginScreen,
-    StudentSeventh: StudentSeventhScreen,
+    //StudentSeventh: App,
 },
 {
     initialRouteName: 'Login',
@@ -14,9 +17,34 @@ const AppStackNavigator = createStackNavigator({
     navigationOptions: {
       headerVisible: false
     }
-}
+})
 
-)
+export const App = createBottomTabNavigator(
+  {
+    What: LoginScreen,
+    Settings: StudentSeventhScreen,
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+    tabBarIcon: ({ focused, horizontal, tintColor }) => {
+      const { routeName } = navigation.state;
+      let IconComponent = Ionicons;
+      let iconName;
+      if (routeName === 'What') {
+        iconName = `md-information-circle${focused ? '' : '-outline'}`;
+      } else if (routeName === 'Settings') {
+        iconName = `md-checkmark-circle${focused ? '' : '-outline'}`;
+      }
+      return <IconComponent name={iconName} size={25} color={tintColor} />;
+    },
+    }),
+    tabBarOptions: {
+      activeTintColor: '#42f44b',
+      inactiveTintColor: 'gray',
+    },
+  }
+);
+
 /*
 const AppStack = createDrawerNavigator({
   login: {screen: LoginScreen},
@@ -28,4 +56,5 @@ const AppStack = createDrawerNavigator({
 const AppSlider = createAppContainer(AppStack);
 */
 
+//export const AppNavigationContainer = createAppContainer(AppStackNavigator);
 export const AppNavigationContainer = createAppContainer(AppStackNavigator);

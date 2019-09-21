@@ -5,9 +5,9 @@ export default StyleSheet.create({
         justifyContent: 'center',
         flex: 1,
     },
-    titleContainer: {
+    headerContainer: {
         flex: 1,
-        backgroundColor: 'skyblue'
+        backgroundColor: 'skyblue',
     },
     title: {
         fontSize: 25,
@@ -24,5 +24,12 @@ export default StyleSheet.create({
     },
     flist: {
         flex: 1,
-    }
+    },
+    surface: {
+        height: 10,
+        width: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+        elevation: 4,
+      },
 });

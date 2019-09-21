@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Text, TouchableHighlight, Image } from 'react-native';
+import { View, Text, TouchableHighlight, TouchableOpacity, Image } from 'react-native';
+import { withNavigation } from 'react-navigation';
+import { Button } from 'react-native-paper'
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 import { GoogleSignin } from 'react-native-google-signin';
 import { PropTypes } from 'prop-types';
 import { firebase } from '@react-native-firebase/auth';
@@ -7,35 +12,69 @@ import { firebase } from '@react-native-firebase/auth';
 import styles from './styles';
 
 class AppHeader extends Component {
+
     render(){
-        const { headerBar, profileImgContainer, profileImg, body, subtitleText} = styles
+        const { headerBar, title, profileImgContainer, profileImg, backButton, body, subtitleText} = styles
 
         return (
-            <Text>what the fuck</Text>
+            <View style={headerBar}>
+                <View style={backButton}>
+                    {this.addBackButton()}
+                </View>
+                <View> 
+                    <Text style={title}>{this.props.title}</Text>
+                </View>
+                <View style={profileImgContainer}>
+                    <TouchableOpacity style={profileImg} activeOpacity={0.5} onPress={()=>this.goToProfilePage()}>
+                        <Image 
+                        style={profileImg}
+                        source={{ uri: firebase.auth().currentUser.photoURL }}/>
+                    </TouchableOpacity>
+                </View>
+            </View>    
         )
     }
-}
 
-signOut = async () => {
-    try{
-        await GoogleSignin.revokeAccess();
-        await GoogleSignin.signOut();
-        await firebase.auth().signOut();
-    }catch(error){
-        this.handleSignInError(error);
-    }finally{
-        this.props.navigation.navigate('Login')
+    addBackButton = () => {
+        if(this.props.touchable){
+            return(
+                <TouchableOpacity onPress={()=>this.goBack(this.props.backTo)}>
+                        <Ionicons name="md-arrow-back" size={30} color={'black'}/>
+                </TouchableOpacity>
+            )
+        }
     }
+    
+    goBack = destination => {
+        this.props.navigation.navigate(destination);
+    }
+
+    goToProfilePage = () => {
+       this.props.navigation.navigate('Profile');
+    };
+
+    signOut = async () => {
+        try{
+            await GoogleSignin.signOut();
+            await firebase.auth().signOut();
+        }catch(error){
+            this.handleSignInError(error);
+        }finally{
+            this.props.navigation.navigate('Login')
+        }
+    }
+
+    /*
+    AppHeader.propTypes = {
+        title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string.isRequired
+    };
+
+    AppHeader.defaultProps = {
+        title: 'Title',
+        UserSignIn_logOut: 'Subtitle'
+    }
+    */
 }
 
-AppHeader.propTypes = {
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired
-};
-
-AppHeader.defaultProps = {
-    title: 'Title',
-    UserSignIn_logOut: 'Subtitle'
-}
-
-export default AppHeader    
+export default withNavigation(AppHeader);    

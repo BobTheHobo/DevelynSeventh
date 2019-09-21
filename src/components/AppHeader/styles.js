@@ -2,16 +2,36 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   headerBar: {
-    backgroundColor: '#75a3a3',
+    flex: 1,
+    flexDirection: 'row',
+    height: 45,
+    backgroundColor: '#f9f9f9',
     shadowColor: 'black',
-    shadowOpacity: 1,
-    elevation: 4
+    shadowOpacity: 3,
+    elevation: 15,
+    justifyContent: 'space-between',
+  },
+  title: {
+    flex: 9,
+    fontSize: 20,
+    textAlignVertical: 'center',
+    justifyContent: 'flex-start',
+    color: 'black',
+    backgroundColor: 'grey',
+    fontWeight: 'bold',
   },
   profileImgContainer: {
-    marginLeft: 5,
-    height: 40,
-    width: 40,
-    borderRadius: 20
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10,
+  },
+  backButton: {
+    marginLeft: 10,
+    backgroundColor: 'pink',
+    width: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   body: {
     flex: 4,
@@ -21,8 +41,8 @@ export default StyleSheet.create({
     color: '#ddd'
   },
   profileImg: {
-    height: 40,
-    width: 40,
+    height: 30,
+    width: 30,
     borderRadius: 20
   }
 });

@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import AppHeader from '../../components/AppHeader'
 import StudentInfoDisplay from '../../components/StudentInfoDisplay'
 import StudentSeventh from '../../components/StudentSeventh'
+import BottomNavBar from '../../routes/BottomNavBar'
 
 //Styling
-import { View, Text, Button } from 'react-native'
+import { View, Button, Image } from 'react-native'
+import { Surface, Text } from 'react-native-paper';
 import styles from './styles'
 
 //Firebase+Google
@@ -13,15 +15,15 @@ import { firebase } from '@react-native-firebase/auth';
 
 class StudentSeventhScreen extends Component {
     render() {
-        const { container, infoDisp, title, titleContainer, buttons, selector } = styles;
+        const { container, infoDisp, title, headerContainer, buttons, selector, surface } = styles;
 
         return (
             <View style={container}> 
 
-                <View style={titleContainer}>
-                    <Text style={title}>D'Evelyn Seventh</Text>
+                <View style={headerContainer}>
+                    <AppHeader title="D'Evelyn Seventh" touchable={false}/>
                 </View>
-
+                
                 <View style={infoDisp}>
                     <StudentInfoDisplay />
                 </View>
@@ -32,14 +34,12 @@ class StudentSeventhScreen extends Component {
                     {/*<Button title='name' onPress={()=>{console.warn(firebase.auth().currentUser.displayName)}}/>*/}
                     <Button title={'Logout'} onPress={ () => this.signOut() }/>
                 </View>
-
             </View>
         )
     }
 
     signOut = async () => {
         try{
-            await GoogleSignin.revokeAccess();
             await GoogleSignin.signOut();
             await firebase.auth().signOut();
             this.props.navigation.navigate('Login');

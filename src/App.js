@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { AppNavigationContainer } from './routes/AppStackNavigator';
+import { Navigator } from './routes/Navigator';
+import { Provider as PaperProvider } from 'react-native-paper';
 import { setCustomText } from 'react-native-global-props';
+import BottomNavBar from './routes/BottomNavBar';
 
 /*Redux
 import { appReduxStore } from './redux/store';
@@ -10,6 +13,7 @@ import { View } from 'react-native'
 */
  
 export default class App extends Component {
+  
   render() {
 
     /*
@@ -22,7 +26,9 @@ export default class App extends Component {
     */
 
     return(
-      <AppNavigationContainer />
+      <PaperProvider>
+        <Navigator />
+      </PaperProvider>
     )
   }
 }

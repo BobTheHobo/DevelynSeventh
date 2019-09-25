@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { StyleSheet, View, Alert, Text } from 'react-native';
+import { StyleSheet, View, Alert, Text, ActivityIndicator} from 'react-native';
 
 class DateTime extends Component {
   _isMounted = false;
@@ -8,18 +8,22 @@ class DateTime extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       curTime: '',
+      curDate: '',
     };
   }
   
 componentDidMount() {
   this._isMounted = true;
   if(this._isMounted){
+    date = new Date();
     setInterval( () => {
         this.setState({
-          curTime : new Date().toLocaleString()
+          curTime : new Date().toLocaleTimeString(), curDate:  date.toLocaleDateString()
         })
     },1000)
+    this.state.loading = false;
   }
 }
 
@@ -28,10 +32,22 @@ componentWillUnmount() {
 }
 
 render() {
+  if(this.state.loading){
+    return(
+      <ActivityIndicator size='large' color='green'/>
+    )
+  }
+  else{
     return (
-      <Text style={{fontSize: this.props.fontSize}}>{this.state.curTime}</Text>
+      <View>
+        <Text style={{fontSize: this.props.fontSize}}>
+          {this.state.curDate+'\n'+this.state.curTime}
+        </Text>
+      </View>
     );
   }
+}
+
 }
 
 export default DateTime

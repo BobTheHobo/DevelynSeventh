@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, TouchableOpacity, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import { Button } from 'react-native-paper'
+import { Button, Divider } from 'react-native-paper'
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 

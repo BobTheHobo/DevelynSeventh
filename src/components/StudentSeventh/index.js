@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { View, Button, Text, TouchableOpacity, List, ListItem, FlatList } from 'react-native'
+import { View, Button, Text, TouchableOpacity, List, ListItem, FlatList, Alert } from 'react-native'
+import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
 import { BottomTabBar } from 'react-navigation';
 import styles from './styles'
 import { firebase } from '@react-native-firebase/firestore';
@@ -15,6 +16,7 @@ class StudentSeventh extends Component {
             signedUpWith: '',
             loading: true,
         });
+        //this.studentNum = firebase.auth().currentUser.email.split('@jeffcoschools.us')
         this.ref = firebase.firestore().collection('Students').doc('2143486');
         this.teachRef = firebase.firestore().collection('Teachers');
     }
@@ -23,7 +25,7 @@ class StudentSeventh extends Component {
         this.getData();
 
         this.unsubscribe = this.ref.onSnapshot((doc) => {
-            console.log(doc.data().SignedUpWith);
+            console.log('Im signed up in'+ doc.data().SignedUpWith);
             this.setState({
                 signedUpWith: doc.data().SignedUpWith,
                 loading: false,
@@ -35,6 +37,22 @@ class StudentSeventh extends Component {
         this.unsubscribe();
     }
 
+    signUpAlert = teacher => {
+        Alert.alert(
+            ''+teacher,
+            'Sign up here?',
+            [
+              {text: 'Cancel'},
+              {text: 'Yes', onPress: () => this.signUp(teacher)},
+            ],
+            //{cancelable: false},
+        );
+    }
+
+    signUp = teacher => {
+        this.ref.set({SignedUpWith: teacher}, {merge: true});
+    }
+
     getData = () => {
         const plans = [];
         this.ref.get().then((doc) => {
@@ -43,7 +61,6 @@ class StudentSeventh extends Component {
                 this.setState({teachers: doc.data().Teachers})
 
                 doc.data().Teachers.forEach((item) => {
-                    console.log("what?",item);
                     this.teachRef.where("Name", "==", "Murphy")
                     .get()
                     .then((teacherList) => {
@@ -66,7 +83,7 @@ class StudentSeventh extends Component {
     }
 
     render() {
-        const { box, title, flist } = styles;
+        const { box, title, flist, signedUpIn } = styles;
 
         if(this.state.loading){
             return null;
@@ -75,13 +92,13 @@ class StudentSeventh extends Component {
 
         return (
             <View style={flist}>
-                <Text>{this.state.signedUpWith}</Text>
+                <Text style={signedUpIn}>{'You are signed up in: '+this.state.signedUpWith}</Text>
                 <FlatList 
                     data={this.state.teachers}
                     renderItem={({item, index}) => {
                         console.log(item);
                         return(
-                                <SignUpButton teacher={item} number={index+1}/>
+                                <SignUpButton teacher={item} number={index+1} press={()=>this.signUpAlert(item)}/>
                         )
                     }}
                     keyExtractor={(item, index) => item}

@@ -21,7 +21,7 @@ class StudentSeventhScreen extends Component {
             <View style={container}> 
 
                 <View style={headerContainer}>
-                    <AppHeader title="D'Evelyn Seventh" touchable={false}/>
+                    <AppHeader title="D'Evelyn Seventh" />
                 </View>
                 
                 <View style={infoDisp}>
@@ -29,11 +29,11 @@ class StudentSeventhScreen extends Component {
                 </View>
 
                 <View style={buttons}> 
-                    <Text style={{fontFamily: 'normal'}}>Sign up for Seventh</Text>
                     <StudentSeventh />
                     {/*<Button title='name' onPress={()=>{console.warn(firebase.auth().currentUser.displayName)}}/>*/}
-                    <Button title={'Logout'} onPress={ () => this.signOut() }/>
                 </View>
+
+                <Button title={'Open modal'} onPress={()=>{this.props.navigation.navigate('Modal');}}/>
             </View>
         )
     }

@@ -4,10 +4,10 @@ export default StyleSheet.create({
     container: {
         justifyContent: 'center',
         flex: 1,
+        backgroundColor: '#fafafa'
     },
     headerContainer: {
         flex: 1,
-        backgroundColor: 'skyblue',
     },
     title: {
         fontSize: 25,
@@ -16,14 +16,11 @@ export default StyleSheet.create({
     },
     infoDisp: {
         flex: 4,
-        backgroundColor: 'steelblue'
+        backgroundColor: '#f0f0f0',
     },
     buttons: {
         flex: 13,
-        backgroundColor: 'powderblue'
-    },
-    flist: {
-        flex: 1,
+        backgroundColor: '#f0f0f0',
     },
     surface: {
         height: 10,
@@ -31,5 +28,5 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 4,
-      },
+    },
 });

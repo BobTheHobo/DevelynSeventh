@@ -10,6 +10,8 @@ export default StyleSheet.create({
     shadowOpacity: 3,
     elevation: 15,
     justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: 'grey'
   },
   title: {
     flex: 9,
@@ -17,7 +19,6 @@ export default StyleSheet.create({
     textAlignVertical: 'center',
     justifyContent: 'flex-start',
     color: 'black',
-    backgroundColor: 'grey',
     fontWeight: 'bold',
   },
   profileImgContainer: {
@@ -28,7 +29,6 @@ export default StyleSheet.create({
   },
   backButton: {
     marginLeft: 10,
-    backgroundColor: 'pink',
     width: 30,
     justifyContent: 'center',
     alignItems: 'center',

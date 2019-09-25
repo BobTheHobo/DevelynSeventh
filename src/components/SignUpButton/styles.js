@@ -6,41 +6,38 @@ export default StyleSheet.create({
         flexDirection: 'row', 
         alignItems: 'center',
         height: 40,
-        margin: 0
+        margin: 0,
     },
     number: {
         flex: 1,
-        borderColor: 'black',
-        borderRightWidth: 0,
-        borderWidth: 2,
+        borderColor: 'grey',
+        borderRightWidth: 1,
+        borderWidth: 0,
         alignItems: 'center', 
         justifyContent: 'center',
-        height:40
+        height:40,
     },
     teacher:{
         flex: 9,
-        borderColor: 'black',
-        borderWidth: 2,
+        borderColor: 'grey',
+        borderWidth: 0,
         alignItems: 'flex-start',
         paddingLeft: 10,
         height: 40
     },
     split:{
         flex: 1,
-        backgroundColor: 'black',
         flexDirection: 'column'
     },
     name:{
         flex: 14,
         textAlignVertical: 'center',
-        backgroundColor: 'bisque',
         fontSize: 15,
         fontWeight: 'bold'
     },
     plan:{
         flex: 13,
         textAlignVertical: 'center',
-        backgroundColor: 'aqua',
         fontSize: 13,
         margin: 0
     },
@@ -50,6 +47,6 @@ export default StyleSheet.create({
         flexDirection: 'row', 
         alignItems: 'center',
         height: 40,
-        elevation: 7,
+        elevation: 1,
     }
 });

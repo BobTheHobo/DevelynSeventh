@@ -95,21 +95,30 @@ class Login extends Component {
             const user = await GoogleSignin.signIn();
 
             //this.dispatchOnLogin(googleAuthResponse);
+            if(user.user.email.indexOf("@jeffcoschools.us") == -1){
 
-            // create a new firebase credential with the token
-            const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken)
-            // login with credential
-            const firebaseUserCredential = await firebase.auth().signInWithCredential(credential);
+                Alert.alert("Error!", user.user.email+"\nis not a valid student email. \n\nPlease use your @jeffcoschools.us email.")
 
-            console.warn(JSON.stringify(firebaseUserCredential.user.toJSON()));
+                await GoogleSignin.signOut();
 
-            Alert.alert("Success!","You have logged in!");
+                this.setState({ isSigninInProgress: false});
+            }
+            else{
+                // create a new firebase credential with the token
+                const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken)
+                // login with credential
+                const firebaseUserCredential = await firebase.auth().signInWithCredential(credential);
 
-            this.setState({
-                isSigninInProgress: false
-            });
+                console.warn(JSON.stringify(firebaseUserCredential.user.toJSON()));
 
-            this.props.navigation.navigate('StudentSeventh');
+                Alert.alert("Success!","You have logged in with "+user.user.email+"!");
+
+                this.setState({
+                    isSigninInProgress: false
+                });
+
+                this.props.navigation.navigate('StudentSeventh');
+            }
         } catch (error){
             console.warn(error);
             this.handleSignInError(error);

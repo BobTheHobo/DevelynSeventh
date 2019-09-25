@@ -9,7 +9,7 @@ class SignUpButton extends Component {
         console.log(this.props);
 
         return (
-            <TouchableHighlight>
+            <TouchableHighlight onPress={this.props.press}>
                 <Surface style={surface}>
                     <View style={container}>
                         <View style={number}>

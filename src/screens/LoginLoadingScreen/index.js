@@ -60,10 +60,12 @@ export default class LoginLoadingScreen extends Component {
   
     // Render any loading content that you like here
     render() {
+        const {container} = styles;
+
       return (
-        <View>
-          <ActivityIndicator />
-          <StatusBar barStyle="default" />
+        <View style={container}>
+          <ActivityIndicator size="large" color="green"/>
+          {/*<StatusBar barStyle="default" />*/}
         </View>
       );
     }

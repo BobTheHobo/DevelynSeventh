@@ -11,5 +11,11 @@ bodyContainer: {
     flex: 17,
     fontSize: 35,
     margin: 10,
-}
+},
+profileImg: {
+    height: 40,
+    width: 40,
+    borderRadius: 20
+},
+
 });

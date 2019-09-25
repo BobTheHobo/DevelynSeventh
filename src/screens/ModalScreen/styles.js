@@ -3,6 +3,13 @@ export default StyleSheet.create({
 container: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
+},
+modalBox: {
+    height: 100,
+    width: 100,
+    backgroundColor: 'grey',
+    justifyContent: 'center',
     alignItems: 'center'
 },
 title: {

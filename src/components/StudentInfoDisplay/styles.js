@@ -10,6 +10,12 @@ box: {
     padding: 3,
     margin: 20,
 },
+container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 0,
+    margin: 10,
+},
 name: {
     fontSize: 25,
 },
@@ -18,5 +24,10 @@ email: {
 },
 studentnum: {
     fontSize: 15
-}
+},
+profileImg: {
+    height: 40,
+    width: 40,
+    borderRadius: 20
+},
 });

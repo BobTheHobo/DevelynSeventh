@@ -5,6 +5,7 @@ export default StyleSheet.create({
         marginLeft: 20,
         marginRight: 20,
         borderColor: 'black',
+        padding: 10,
         borderBottomWidth: 1,
     },
     button: {

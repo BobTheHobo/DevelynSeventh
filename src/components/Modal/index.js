@@ -13,10 +13,10 @@ class Modal extends Component {
                     </View>
                     <View style={confirmButtons}>
                         <View style={button}>
-                            <Button title="Yes" onPress={this.props.confirm}></Button> 
+                            <Button title="Yes" /*onPress={this.props.confirm}*/></Button> 
                         </View>
                         <View style={button}>
-                            <Button title="No"></Button> 
+                            <Button title="No" ></Button> 
                         </View>
                     </View>
                 </View>

@@ -11,25 +11,31 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1FA28A199B8B4BDB92795713 /* RobotoMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 141AF10B0B584785BDE53CC4 /* RobotoMono-Thin.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* develynappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* develynappTests.m */; };
-		A56542F5580140D98C948A47 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7BAE5FF4E1A487BB763E0E0 /* RobotoMono-Bold.ttf */; };
-		74F19E5D41AB41A38EAA6D69 /* RobotoMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FE41FE920AF4E16967B014E /* RobotoMono-BoldItalic.ttf */; };
-		90737CDF262B44FC8ED3243C /* RobotoMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9551EC07DCB843668A958E37 /* RobotoMono-Light.ttf */; };
-		8C1793AFE90A4E94908F1014 /* RobotoMono-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A750425C22D45F48C10A061 /* RobotoMono-LightItalic.ttf */; };
 		4F4E3F6D38C245A288D62D78 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 301A86117773468B80907D25 /* RobotoMono-Medium.ttf */; };
 		693636E6EE894FBEBAF8841C /* RobotoMono-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94D4EF92C0DC44EC80F1B8ED /* RobotoMono-MediumItalic.ttf */; };
-		A43FF93FF911413A8CEFF60A /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30494D22D67A407EA990F1B8 /* RobotoMono-Regular.ttf */; };
+		74F19E5D41AB41A38EAA6D69 /* RobotoMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FE41FE920AF4E16967B014E /* RobotoMono-BoldItalic.ttf */; };
 		7EF4CB5B9267475E9B1F1BF9 /* RobotoMono-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05817C95EDD9453085F7A0BF /* RobotoMono-RegularItalic.ttf */; };
-		1FA28A199B8B4BDB92795713 /* RobotoMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 141AF10B0B584785BDE53CC4 /* RobotoMono-Thin.ttf */; };
-		D15ED5DC9B3C441090F74930 /* RobotoMono-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 057122B2BA424C4B890FF014 /* RobotoMono-ThinItalic.ttf */; };
-		A817E4774DDD458CADCB994C /* Manjari-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABEE765CC30347DE9270E917 /* Manjari-Bold.ttf */; };
+		8C1793AFE90A4E94908F1014 /* RobotoMono-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A750425C22D45F48C10A061 /* RobotoMono-LightItalic.ttf */; };
+		8DAA5B21233EE09D001446FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DAA5B20233EE09D001446FC /* GoogleService-Info.plist */; };
+		8DAA5B22233EE09D001446FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DAA5B20233EE09D001446FC /* GoogleService-Info.plist */; };
+		90737CDF262B44FC8ED3243C /* RobotoMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9551EC07DCB843668A958E37 /* RobotoMono-Light.ttf */; };
 		9CE04E4C8E7C4A1E9A349F3F /* Manjari-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F78CD5E914BF59004F958 /* Manjari-Regular.ttf */; };
-		D9E5731726CA4FFE842A6290 /* Manjari-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFD407CEC18D4A0CB8E65379 /* Manjari-Thin.ttf */; };
+		A08DAB34BA133744600BE45A /* libPods-develynapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099B98858C870E90DB20ABF7 /* libPods-develynapp.a */; };
+		A43FF93FF911413A8CEFF60A /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30494D22D67A407EA990F1B8 /* RobotoMono-Regular.ttf */; };
+		A56542F5580140D98C948A47 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7BAE5FF4E1A487BB763E0E0 /* RobotoMono-Bold.ttf */; };
+		A817E4774DDD458CADCB994C /* Manjari-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABEE765CC30347DE9270E917 /* Manjari-Bold.ttf */; };
 		BF1C483D3DF04163AB3DCFE4 /* NewsCycle-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFC002143EF046FDA71C4E24 /* NewsCycle-Bold.ttf */; };
+		D15ED5DC9B3C441090F74930 /* RobotoMono-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 057122B2BA424C4B890FF014 /* RobotoMono-ThinItalic.ttf */; };
+		D6F1EAF904E60D05E1400D0F /* libPods-develynappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB963ADD69C061F2AF1D6F5 /* libPods-develynappTests.a */; };
+		D9E5731726CA4FFE842A6290 /* Manjari-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFD407CEC18D4A0CB8E65379 /* Manjari-Thin.ttf */; };
 		F52DF7940716431A991965EF /* NewsCycle-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5450367A9AF343A2B0A3ADA9 /* NewsCycle-Regular.ttf */; };
+		F57C81CF13C9EA35515E0F3A /* libPods-develynapp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A78F7DF9A9E4C05EEEF5C9 /* libPods-develynapp-tvOS.a */; };
+		FAAF62B4ED0721CF54FA3375 /* libPods-develynapp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A263395362520368392FE5 /* libPods-develynapp-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,11 @@
 		00E356EE1AD99517003FC87E /* develynappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = develynappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* develynappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = develynappTests.m; sourceTree = "<group>"; };
+		057122B2BA424C4B890FF014 /* RobotoMono-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-ThinItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-ThinItalic.ttf"; sourceTree = "<group>"; };
+		05817C95EDD9453085F7A0BF /* RobotoMono-RegularItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-RegularItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-RegularItalic.ttf"; sourceTree = "<group>"; };
+		07A263395362520368392FE5 /* libPods-develynapp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-develynapp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		099B98858C870E90DB20ABF7 /* libPods-develynapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-develynapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A484FA4FC64F1EB51B87FBB /* Pods-develynapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-develynapp.debug.xcconfig"; path = "Target Support Files/Pods-develynapp/Pods-develynapp.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* develynapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = develynapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = develynapp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = develynapp/AppDelegate.m; sourceTree = "<group>"; };
@@ -61,25 +72,33 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = develynapp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = develynapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = develynapp/main.m; sourceTree = "<group>"; };
+		141AF10B0B584785BDE53CC4 /* RobotoMono-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-Thin.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Thin.ttf"; sourceTree = "<group>"; };
+		18AE490A9A5BEEC28467CED3 /* Pods-develynappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-develynappTests.debug.xcconfig"; path = "Target Support Files/Pods-develynappTests/Pods-develynappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		279AD85413B4EDFC44F1DC55 /* Pods-develynapp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-develynapp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-develynapp-tvOS/Pods-develynapp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* develynapp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "develynapp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* develynapp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "develynapp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		301A86117773468B80907D25 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-Medium.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Medium.ttf"; sourceTree = "<group>"; };
+		30494D22D67A407EA990F1B8 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-Regular.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
+		37F1510F75BE72498D52880D /* Pods-develynapp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-develynapp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-develynapp-tvOSTests/Pods-develynapp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FE41FE920AF4E16967B014E /* RobotoMono-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-BoldItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-BoldItalic.ttf"; sourceTree = "<group>"; };
+		5450367A9AF343A2B0A3ADA9 /* NewsCycle-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NewsCycle-Regular.ttf"; path = "../assets/fonts/News_Cycle/NewsCycle-Regular.ttf"; sourceTree = "<group>"; };
+		54A5A3F7989606834533B903 /* Pods-develynapp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-develynapp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-develynapp-tvOSTests/Pods-develynapp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A6D0A0FA909EBF38E35CE62 /* Pods-develynapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-develynapp.release.xcconfig"; path = "Target Support Files/Pods-develynapp/Pods-develynapp.release.xcconfig"; sourceTree = "<group>"; };
+		6FB7B65D6C3C5EF2C31EA6C3 /* Pods-develynappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-develynappTests.release.xcconfig"; path = "Target Support Files/Pods-develynappTests/Pods-develynappTests.release.xcconfig"; sourceTree = "<group>"; };
+		7EB963ADD69C061F2AF1D6F5 /* libPods-develynappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-develynappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F9F78CD5E914BF59004F958 /* Manjari-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Manjari-Regular.ttf"; path = "../assets/fonts/Manjari/Manjari-Regular.ttf"; sourceTree = "<group>"; };
+		8A750425C22D45F48C10A061 /* RobotoMono-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-LightItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-LightItalic.ttf"; sourceTree = "<group>"; };
+		8DAA5B20233EE09D001446FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94D4EF92C0DC44EC80F1B8ED /* RobotoMono-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-MediumItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-MediumItalic.ttf"; sourceTree = "<group>"; };
+		9551EC07DCB843668A958E37 /* RobotoMono-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-Light.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Light.ttf"; sourceTree = "<group>"; };
+		986B5AA5E0D998404E47A1DF /* Pods-develynapp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-develynapp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-develynapp-tvOS/Pods-develynapp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		A6A78F7DF9A9E4C05EEEF5C9 /* libPods-develynapp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-develynapp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABEE765CC30347DE9270E917 /* Manjari-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Manjari-Bold.ttf"; path = "../assets/fonts/Manjari/Manjari-Bold.ttf"; sourceTree = "<group>"; };
+		B7BAE5FF4E1A487BB763E0E0 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoMono-Bold.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
+		CFC002143EF046FDA71C4E24 /* NewsCycle-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NewsCycle-Bold.ttf"; path = "../assets/fonts/News_Cycle/NewsCycle-Bold.ttf"; sourceTree = "<group>"; };
+		CFD407CEC18D4A0CB8E65379 /* Manjari-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Manjari-Thin.ttf"; path = "../assets/fonts/Manjari/Manjari-Thin.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		B7BAE5FF4E1A487BB763E0E0 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; name = "RobotoMono-Bold.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3FE41FE920AF4E16967B014E /* RobotoMono-BoldItalic.ttf */ = {isa = PBXFileReference; name = "RobotoMono-BoldItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9551EC07DCB843668A958E37 /* RobotoMono-Light.ttf */ = {isa = PBXFileReference; name = "RobotoMono-Light.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8A750425C22D45F48C10A061 /* RobotoMono-LightItalic.ttf */ = {isa = PBXFileReference; name = "RobotoMono-LightItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		301A86117773468B80907D25 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; name = "RobotoMono-Medium.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		94D4EF92C0DC44EC80F1B8ED /* RobotoMono-MediumItalic.ttf */ = {isa = PBXFileReference; name = "RobotoMono-MediumItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		30494D22D67A407EA990F1B8 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; name = "RobotoMono-Regular.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		05817C95EDD9453085F7A0BF /* RobotoMono-RegularItalic.ttf */ = {isa = PBXFileReference; name = "RobotoMono-RegularItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-RegularItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		141AF10B0B584785BDE53CC4 /* RobotoMono-Thin.ttf */ = {isa = PBXFileReference; name = "RobotoMono-Thin.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		057122B2BA424C4B890FF014 /* RobotoMono-ThinItalic.ttf */ = {isa = PBXFileReference; name = "RobotoMono-ThinItalic.ttf"; path = "../assets/fonts/Roboto_Mono/RobotoMono-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		ABEE765CC30347DE9270E917 /* Manjari-Bold.ttf */ = {isa = PBXFileReference; name = "Manjari-Bold.ttf"; path = "../assets/fonts/Manjari/Manjari-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7F9F78CD5E914BF59004F958 /* Manjari-Regular.ttf */ = {isa = PBXFileReference; name = "Manjari-Regular.ttf"; path = "../assets/fonts/Manjari/Manjari-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CFD407CEC18D4A0CB8E65379 /* Manjari-Thin.ttf */ = {isa = PBXFileReference; name = "Manjari-Thin.ttf"; path = "../assets/fonts/Manjari/Manjari-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CFC002143EF046FDA71C4E24 /* NewsCycle-Bold.ttf */ = {isa = PBXFileReference; name = "NewsCycle-Bold.ttf"; path = "../assets/fonts/News_Cycle/NewsCycle-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5450367A9AF343A2B0A3ADA9 /* NewsCycle-Regular.ttf */ = {isa = PBXFileReference; name = "NewsCycle-Regular.ttf"; path = "../assets/fonts/News_Cycle/NewsCycle-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F1EAF904E60D05E1400D0F /* libPods-develynappTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08DAB34BA133744600BE45A /* libPods-develynapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F57C81CF13C9EA35515E0F3A /* libPods-develynapp-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAF62B4ED0721CF54FA3375 /* libPods-develynapp-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,9 +154,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		095C00F8E8467B573AC514AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A484FA4FC64F1EB51B87FBB /* Pods-develynapp.debug.xcconfig */,
+				5A6D0A0FA909EBF38E35CE62 /* Pods-develynapp.release.xcconfig */,
+				279AD85413B4EDFC44F1DC55 /* Pods-develynapp-tvOS.debug.xcconfig */,
+				986B5AA5E0D998404E47A1DF /* Pods-develynapp-tvOS.release.xcconfig */,
+				37F1510F75BE72498D52880D /* Pods-develynapp-tvOSTests.debug.xcconfig */,
+				54A5A3F7989606834533B903 /* Pods-develynapp-tvOSTests.release.xcconfig */,
+				18AE490A9A5BEEC28467CED3 /* Pods-develynappTests.debug.xcconfig */,
+				6FB7B65D6C3C5EF2C31EA6C3 /* Pods-develynappTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* develynapp */ = {
 			isa = PBXGroup;
 			children = (
+				8DAA5B20233EE09D001446FC /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -150,6 +189,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
+				099B98858C870E90DB20ABF7 /* libPods-develynapp.a */,
+				A6A78F7DF9A9E4C05EEEF5C9 /* libPods-develynapp-tvOS.a */,
+				07A263395362520368392FE5 /* libPods-develynapp-tvOSTests.a */,
+				7EB963ADD69C061F2AF1D6F5 /* libPods-develynappTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +213,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				C3C6E763CDCC4F739C9A0CD3 /* Resources */,
+				095C00F8E8467B573AC514AD /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -188,7 +232,7 @@
 			sourceTree = "<group>";
 		};
 		C3C6E763CDCC4F739C9A0CD3 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				B7BAE5FF4E1A487BB763E0E0 /* RobotoMono-Bold.ttf */,
 				3FE41FE920AF4E16967B014E /* RobotoMono-BoldItalic.ttf */,
@@ -208,7 +252,6 @@
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -217,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "develynappTests" */;
 			buildPhases = (
+				92B73A2AD64B145757591F99 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -235,18 +279,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "develynapp" */;
 			buildPhases = (
+				C603127BBD68124E2A919F78 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				45287BAF7E5EFF6BE2D70734 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = develynapp;
-			productName = "develynapp";
+			productName = develynapp;
 			productReference = 13B07F961A680F5B00A75B9A /* develynapp.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -254,6 +300,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "develynapp-tvOS" */;
 			buildPhases = (
+				42FA0FDB8E9D68FC23BE00A0 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -273,6 +320,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "develynapp-tvOSTests" */;
 			buildPhases = (
+				64A02D1A9A7EE0C1ED7D4CC6 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -300,6 +348,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = B2HS4QKN2M;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -316,6 +367,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -337,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DAA5B22233EE09D001446FC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +408,7 @@
 				A43FF93FF911413A8CEFF60A /* RobotoMono-Regular.ttf in Resources */,
 				7EF4CB5B9267475E9B1F1BF9 /* RobotoMono-RegularItalic.ttf in Resources */,
 				1FA28A199B8B4BDB92795713 /* RobotoMono-Thin.ttf in Resources */,
+				8DAA5B21233EE09D001446FC /* GoogleService-Info.plist in Resources */,
 				D15ED5DC9B3C441090F74930 /* RobotoMono-ThinItalic.ttf in Resources */,
 				A817E4774DDD458CADCB994C /* Manjari-Bold.ttf in Resources */,
 				9CE04E4C8E7C4A1E9A349F3F /* Manjari-Regular.ttf in Resources */,
@@ -409,6 +463,146 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		42FA0FDB8E9D68FC23BE00A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-develynapp-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45287BAF7E5EFF6BE2D70734 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-develynapp/Pods-develynapp-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-develynapp/Pods-develynapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64A02D1A9A7EE0C1ED7D4CC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-develynapp-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92B73A2AD64B145757591F99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-develynappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C603127BBD68124E2A919F78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-develynapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -515,6 +709,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18AE490A9A5BEEC28467CED3 /* Pods-develynappTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -537,6 +732,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FB7B65D6C3C5EF2C31EA6C3 /* Pods-develynappTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -556,10 +752,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A484FA4FC64F1EB51B87FBB /* Pods-develynapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = B2HS4QKN2M;
 				INFOPLIST_FILE = develynapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -575,9 +773,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A6D0A0FA909EBF38E35CE62 /* Pods-develynapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B2HS4QKN2M;
 				INFOPLIST_FILE = develynapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -593,6 +793,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 279AD85413B4EDFC44F1DC55 /* Pods-develynapp-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -620,6 +821,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 986B5AA5E0D998404E47A1DF /* Pods-develynapp-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -647,6 +849,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37F1510F75BE72498D52880D /* Pods-develynapp-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -673,6 +876,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54A5A3F7989606834533B903 /* Pods-develynapp-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button, Image } from 'react-native'
+import { View, Text, Button, Image, SafeAreaView } from 'react-native'
 import styles from './styles' 
 import AppHeader from '../../components/AppHeader'
 import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
@@ -12,6 +12,7 @@ class ProfileScreen extends Component {
     render() {
         const { container, headerContainer, bodyContainer, title, profileImg} = styles;
         return (
+            <SafeAreaView style={{flex: 1}}>
             <View style={container}>
                 <View style={headerContainer}>
                     <AppHeader title="Profile" touchable={true} backTo={'Home'}/>
@@ -32,6 +33,7 @@ class ProfileScreen extends Component {
                     </Card>
                 </View>
             </View>
+            </SafeAreaView>
         )
     }
 

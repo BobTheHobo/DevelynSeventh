@@ -48,5 +48,21 @@ export default StyleSheet.create({
         alignItems: 'center',
         height: 40,
         elevation: 1,
-    }
+    },
+    full: {
+        flex: 2,
+        margin: 5,
+    },
+    fullButton: {
+        flex: 1,
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 5
+    },
+    count: {
+        flex: 2,
+        alignItems: 'flex-end',
+        marginEnd: 10
+    },
 });

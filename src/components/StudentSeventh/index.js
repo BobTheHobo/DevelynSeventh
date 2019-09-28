@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { View, Button, Text, TouchableOpacity, List, ListItem, FlatList, Alert } from 'react-native'
-import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
-import { BottomTabBar } from 'react-navigation';
+import { View, Text, FlatList, Alert } from 'react-native'
 import styles from './styles'
+
+//Firebase
 import { firebase } from '@react-native-firebase/firestore';
+
+//Other components
 import SignUpButton from '../SignUpButton'
 
 class StudentSeventh extends Component {
@@ -12,23 +14,21 @@ class StudentSeventh extends Component {
         super(props);
         this.state = ({
             teachers: [],
-            plan: [],
-            signedUpWith: '',
-            loading: true,
         });
-        //this.studentNum = firebase.auth().currentUser.email.split('@jeffcoschools.us')
-        this.ref = firebase.firestore().collection('Students').doc('2143486');
+
+        this.email = firebase.auth().currentUser.email
+        this.studentNum = this.email.slice(0,this.email.indexOf('@jeffcoschools.us'));
+        this.ref = firebase.firestore().collection('Students').doc(this.studentNum);
+
         this.teachRef = firebase.firestore().collection('Teachers');
     }
 
     componentDidMount(){
         this.getData();
-
         this.unsubscribe = this.ref.onSnapshot((doc) => {
             console.log('Im signed up in'+ doc.data().SignedUpWith);
             this.setState({
                 signedUpWith: doc.data().SignedUpWith,
-                loading: false,
             });
         });
     }
@@ -54,25 +54,10 @@ class StudentSeventh extends Component {
     }
 
     getData = () => {
-        const plans = [];
         this.ref.get().then((doc) => {
             if (doc.exists) {
                 console.log("Document data: ", doc.data().Teachers);
                 this.setState({teachers: doc.data().Teachers})
-
-                doc.data().Teachers.forEach((item) => {
-                    this.teachRef.where("Name", "==", "Murphy")
-                    .get()
-                    .then((teacherList) => {
-                        teacherList.forEach((doc2) => {
-                            console.log("Teacher plan = ", doc2.data().Plan);
-                            console.log("foeiaiofj" + doc2.data().Name);
-                        })
-                    })
-                    .catch((error) => {
-                        console.log("something bad happened while collecting data");
-                    });
-                })
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
@@ -83,12 +68,7 @@ class StudentSeventh extends Component {
     }
 
     render() {
-        const { box, title, flist, signedUpIn } = styles;
-
-        if(this.state.loading){
-            return null;
-            //TODO: add loadign?
-        }
+        const { flist, signedUpIn } = styles;
 
         return (
             <View style={flist}>
@@ -98,7 +78,11 @@ class StudentSeventh extends Component {
                     renderItem={({item, index}) => {
                         console.log(item);
                         return(
-                                <SignUpButton teacher={item} number={index+1} press={()=>this.signUpAlert(item)}/>
+                            <SignUpButton 
+                                teacher={item} 
+                                number={index+1}
+                                press={()=>this.signUpAlert(item)}
+                            />
                         )
                     }}
                     keyExtractor={(item, index) => item}

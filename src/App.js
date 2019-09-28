@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StatusBar } from 'react-native';
 import { AppNavigationContainer } from './routes/AppStackNavigator';
 import { Navigator } from './routes/Navigator';
 import { Provider as PaperProvider } from 'react-native-paper';
@@ -16,6 +17,9 @@ export default class App extends Component {
   
   render() {
 
+    //Change color of Apple status bar
+    StatusBar.setBarStyle('default');
+
     /*
     const customTextProps = {
       style: {
@@ -27,6 +31,7 @@ export default class App extends Component {
 
     return(
       <PaperProvider>
+        <StatusBar />
         <Navigator />
       </PaperProvider>
     )

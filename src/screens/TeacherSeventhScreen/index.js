@@ -13,7 +13,7 @@ import styles from './styles'
 import { GoogleSignin } from 'react-native-google-signin';
 import { firebase } from '@react-native-firebase/auth';
 
-class StudentSeventhScreen extends Component {
+class TeacherSeventhScreen extends Component {
     render() {
         const { container, infoDisp, title, headerContainer, buttons, selector, surface } = styles;
 
@@ -39,16 +39,6 @@ class StudentSeventhScreen extends Component {
             </SafeAreaView>
         )
     }
-
-    signOut = async () => {
-        try{
-            await GoogleSignin.signOut();
-            await firebase.auth().signOut();
-            this.props.navigation.navigate('Login');
-        }catch(error){
-            //console.log(error);
-        }
-    }
 }
 
-export default StudentSeventhScreen
+export default TeacherSeventhScreen

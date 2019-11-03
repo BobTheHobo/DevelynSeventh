@@ -49,15 +49,23 @@ class TeacherSeventh extends Component {
     }
 
     render() {
-        const { box, title, flist, signedUpIn } = styles;
+        const { box, title, flist, signedUpIn, label, labelText } = styles;
         
 
         return (
             <View style={flist}>
-                <Text style={signedUpIn}>Current plan: </Text>
-                <Text>this.state.currentPlan+"\n"</Text>
-                <Text>Current number of students: </Text>
-                <Text>this.state.currentNum+"/"+this.state.maxNum</Text>
+                <Text style={signedUpIn}>
+                    <Text style={{fontWeight: 'bold'}}>{"Current plan: "}</Text>
+                    <Text>{this.state.currentPlan+"\n"}</Text>
+                    <Text style={{fontWeight: 'bold'}}>{"Current students signed up: "}</Text>
+                    <Text>{this.state.currentNum+"/"+this.state.maxNum}</Text>
+                </Text>
+
+                <View style={label}>
+                    <Text style={labelText}>Present</Text>
+                    <Text style={labelText}>Late</Text>
+                    <Text style={labelText}>Absent</Text>
+                </View>
                 
                 <FlatList 
                         data={this.state.studentRoster}

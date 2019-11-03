@@ -23,5 +23,16 @@ export default StyleSheet.create({
         height: 60,
         elevation: 1,
     },
-    
+    presentButton:{
+        flex: 1.2,
+        margin: 6,
+    },
+    lateButton:{
+        flex: 1.2,
+        margin: 6
+    },
+    absentButton:{
+        flex: 1.2,
+        margin: 6
+    },
 });

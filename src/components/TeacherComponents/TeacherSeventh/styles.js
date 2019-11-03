@@ -12,10 +12,19 @@ export default StyleSheet.create({
     },
     signedUpIn: {
         fontSize: 15,
-        fontWeight: 'bold',
         margin: 5,
         padding: 5,
         backgroundColor: 'white',
         elevation: 1
+    },
+    label:{
+        flexDirection: 'row',
+        justifyContent: "flex-end",
+        alignItems: 'center',
+        marginEnd: 3
+    },
+    labelText:{
+        fontSize: 10,
+        marginHorizontal: 6.4
     }
 });

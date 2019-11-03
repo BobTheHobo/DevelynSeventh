@@ -1,9 +1,10 @@
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 //import pages
-import Sidebar from '../components/Sidebar';
-import LoginScreen from '../screens/LoginScreen';
-import StudentSeventhScreen from '../screens/StudentSeventhScreen';
+import Sidebar from '../components/NavigationComponents/Sidebar';
+import LoginScreen from '../screens/LoginScreens/LoginScreen';
+import StudentSeventhScreen from '../screens/StudentScreens/StudentSeventhScreen';
+import TeacherSeventhScreen from '../screens/TeacherScreens/TeacherSeventhScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import React from 'react';
 

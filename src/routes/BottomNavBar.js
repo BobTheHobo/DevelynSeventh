@@ -1,27 +1,41 @@
+//WARNING: THIS CODE IS EXTREMELY EXPERIMENTAL AND TAKES UP A LOT OF RESOURCES
 import React, { Component } from 'react'
 import { BottomNavigation, Text } from 'react-native-paper';
 
-const RecentsRoute = () => <Text>Recents</Text>;
-//const login = () => this.props.navigation.navigate('Login');
-//const seventh = () => this.props.navigation.navigate('StudentSeventh');
+//screens
+import TeacherSeventhScreen from '../screens/TeacherScreens/TeacherSeventhScreen';
+import TeacherRequireScreen from '../screens/TeacherScreens/TeacherRequireScreen';
+import TeacherPlanScreen from '../screens/TeacherScreens/TeacherPlanScreen';
+import TeacherFindStudentScreen from '../screens/TeacherScreens/TeacherFindStudentScreen';
+
+const SeventhRoute = () => <TeacherSeventhScreen/>;
+const PlanRoute = () => <TeacherPlanScreen/>;
+const RequireRoute = () => <TeacherRequireScreen/>;
+const FindRoute = () => <TeacherFindStudentScreen/>;
 
 export default class BottomNavBar extends Component {
   state = {
     index: 0,
     routes: [
-      { key: 'music', title: 'Music', icon: 'queue-music' },
-      { key: 'albums', title: 'Albums', icon: 'album' },
-      { key: 'recents', title: 'Recents', icon: 'history' },
+      { key: 'seventh', title: 'Seventh', icon: 'queue-music' },
+      { key: 'plan', title: 'Plan', icon: 'album' },
+      { key: 'require', title: 'Require', icon: 'history' },
+      { key: 'find', title: 'Find Students', icon: 'history' },
     ],
   };
 
   _handleIndexChange = index => this.setState({ index });
 
   _renderScene = BottomNavigation.SceneMap({
-    music: login,
-    albums: seventh,
-    recents: RecentsRoute,
+    seventh: SeventhRoute,
+    plan: PlanRoute,
+    require: RequireRoute,
+    find: FindRoute,
   });
+
+  navigateTo = (destination) => {
+    this.props.navigation.navigate(destination)
+  }
 
   render() {
     return (

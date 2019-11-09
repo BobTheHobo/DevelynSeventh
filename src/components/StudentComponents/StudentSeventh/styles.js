@@ -12,7 +12,6 @@ export default StyleSheet.create({
     },
     signedUpIn: {
         fontSize: 15,
-        fontWeight: 'bold',
         margin: 5,
         padding: 5,
         backgroundColor: 'white',

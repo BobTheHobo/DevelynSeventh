@@ -3,7 +3,7 @@ import AppHeader from '../../../components/NavigationComponents/AppHeader'
 import StudentInfoDisplay from '../../../components/StudentComponents/StudentInfoDisplay'
 
 //Styling
-import { View, Button, Image, SafeAreaView } from 'react-native'
+import { View, Button, Image, SafeAreaView, Alert } from 'react-native'
 import styles from './styles'
 
 //Firebase+Google
@@ -29,6 +29,18 @@ class AdminScreen extends Component {
 
     componentWillUnmount(){
         this.signOut();
+    }
+
+    confirm = async () => {
+        Alert.alert(
+            "Are you sure you want to perform this action?",
+            "",
+            [
+              {text: "Yes", onPress: ()=>{return true}},
+              {text: "Cancel"}
+            ],
+            //{cancelable: false},
+        );
     }
 
     //How to perform a query of items contained in an array :
@@ -58,6 +70,22 @@ class AdminScreen extends Component {
         })
     }
 
+    RESET = () => {      
+        const teachRef = firebase.firestore().collection('Teachers');
+
+        teachRef.get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                doc.set({
+                    AttendanceSubmitted: false,
+                    Plan: "",
+                    StudentsSignedUp: [],
+                }, {merge: true});
+            });
+        });
+
+        Alert.alert("Teacher daily data has been reset!");
+    }
+
     signOut = async () => {
         try{
             await GoogleSignin.signOut();
@@ -84,9 +112,24 @@ class AdminScreen extends Component {
 
                     <View style={buttons}> 
                         <Button title="Create Teacher Database" onPress={
-                            this.teachers.forEach((element) => 
-                                this.CREATETEACHERDATABASE(element.split("_")[0], element.split("_")[1])
-                            )
+                            () => 
+                            {
+                                let confirm = this.confirm();
+                                if(confirm){
+                                    this.teachers.forEach((element) => 
+                                        this.CREATETEACHERDATABASE(element.split("_")[0], element.split("_")[1])
+                                    )
+                                }
+                            }
+                        }/>
+                        <Button title="Reset daily data" onPress={
+                            () => 
+                            {
+                                let confirm = this.confirm();
+                                if(confirm){
+                                    this.RESET();
+                                }
+                            }
                         }/>
                     </View>
 

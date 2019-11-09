@@ -113,7 +113,7 @@ class Login extends Component {
         }else if(user1.user.email.indexOf("@jeffco.k12.co.us") != -1){
             this.setState({userType: 'teacher'});
         }else if(user1.user.email == "thienvietngomai@gmail.com" == 1){
-			this.setState({userType: 'teacher'});
+			this.setState({userType: 'admin'});
         }else{
 			this.setState({userType: 'invalid'});
         }

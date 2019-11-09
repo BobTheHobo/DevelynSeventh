@@ -64,7 +64,10 @@ class StudentSeventh extends Component {
         else{
             return (
                 <View style={flist}>
-                    <Text style={signedUpIn}>{'You are signed up in: '+this.state.signedUpWith}</Text>
+                    <Text style={signedUpIn}>
+                        <Text>You are signed up in: </Text>
+                        <Text style={{fontWeight: 'bold'}}>{this.state.signedUpWith}</Text>
+                    </Text>
                     <FlatList 
                         data={this.state.teachers}
                         renderItem={({item, index}) => {

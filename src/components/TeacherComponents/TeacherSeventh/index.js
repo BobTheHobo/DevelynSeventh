@@ -14,6 +14,8 @@ class TeacherSeventh extends Component {
             studentRoster: [],
             currentNum:0,
             maxNum:0,
+            submitted: false,
+            submitTitle: 'Submit Attendance'
         });
 
         this.ref = firebase.firestore().collection('Teachers').doc("Viet");
@@ -26,6 +28,7 @@ class TeacherSeventh extends Component {
                 currentPlan: doc.data().Plan,
                 currentNum: doc.data().StudentsSignedUp.length,
                 maxNum: doc.data().Max,
+                submitted: doc.data().AttendanceSubmitted
             });
         });
     }
@@ -48,6 +51,30 @@ class TeacherSeventh extends Component {
         });
     }
 
+    submitConfirm = () => {
+        let prompt = "Submit Attendance";
+        if(this.state.submitted){
+            prompt = "Resubmit?"
+        }
+        Alert.alert(
+            prompt,
+            "",
+            [
+              {text: "Yes", onPress: () => this.submitAttendance()},
+              {text: "Cancel"}
+            ],
+            {cancelable: false},
+        );
+    }
+
+    submitAttendance(){
+        this.ref.set({
+            AttendanceSubmitted : true
+        }, { merge: true });
+        this.state.submitted = true;
+        this.setState({submitTitle: "Attendance Submitted!"});
+    }
+
     render() {
         const { box, title, flist, signedUpIn, label, labelText } = styles;
         
@@ -55,10 +82,10 @@ class TeacherSeventh extends Component {
         return (
             <View style={flist}>
                 <Text style={signedUpIn}>
-                    <Text style={{fontWeight: 'bold'}}>{"Current plan: "}</Text>
-                    <Text>{this.state.currentPlan+"\n"}</Text>
-                    <Text style={{fontWeight: 'bold'}}>{"Current students signed up: "}</Text>
-                    <Text>{this.state.currentNum+"/"+this.state.maxNum}</Text>
+                    <Text>{"Current plan: "}</Text>
+                    <Text style={{fontWeight: 'bold'}}>{this.state.currentPlan+"\n"}</Text>
+                    <Text>{"Current students signed up: "}</Text>
+                    <Text style={{fontWeight: 'bold'}}>{this.state.currentNum+"/"+this.state.maxNum}</Text>
                 </Text>
 
                 <View style={label}>
@@ -78,9 +105,13 @@ class TeacherSeventh extends Component {
                         }}
                         keyExtractor={(item, index) => item}
                     >
-                    </FlatList>
+                </FlatList>
+
+                <Button title={this.state.submitTitle} onPress={() => this.submitConfirm()}/>
             </View>
         )
+
+        
     }
 }
 

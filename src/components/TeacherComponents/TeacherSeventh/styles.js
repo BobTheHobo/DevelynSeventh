@@ -26,5 +26,5 @@ export default StyleSheet.create({
     labelText:{
         fontSize: 10,
         marginHorizontal: 6.4
-    }
+    },
 });

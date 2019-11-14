@@ -31,15 +31,29 @@ class AdminScreen extends Component {
         this.signOut();
     }
 
-    confirm = async () => {
+    //Sorry for all these reset functions. I wanted to simplify it into a single one that took the goal function(RESET() or CREATETEACHERDATABASE()) as
+    //a parameter, but i have no idea how to do it
+    confirmReset = async () => {
         Alert.alert(
             "Are you sure you want to perform this action?",
             "",
             [
-              {text: "Yes", onPress: ()=>{return true}},
-              {text: "Cancel"}
+              {text: "Yes", onPress: ()=>this.RESET()},
+              {text: "Cancel"},
             ],
-            //{cancelable: false},
+            {cancelable: false},
+        );
+    }
+
+    confirmCreateDatabase = async () => {
+        Alert.alert(
+            "Are you sure you want to perform this action?",
+            "",
+            [
+              {text: "Yes", onPress: ()=>this.WTF()},
+              {text: "Cancel"},
+            ],
+            {cancelable: false},
         );
     }
 
@@ -68,22 +82,32 @@ class AdminScreen extends Component {
             StudentsSignedUp: [],
             StudentRoster: students
         })
+
+        console.warn("Teacher Database created");
     }
 
-    RESET = () => {      
-        const teachRef = firebase.firestore().collection('Teachers');
+    WTF = async () => {
+        this.teachers.forEach((element) => 
+            this.CREATETEACHERDATABASE(element.split("_")[0], element.split("_")[1])
+        )
+    }
 
+    RESET = async () => {      
+        const teachRef = firebase.firestore().collection('Teachers');
         teachRef.get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                doc.set({
+            let batch = firebase.firestore().batch();
+            querySnapshot.forEach((doc) => {
+                const docRef = teachRef.doc(doc.id)
+                batch.update(docRef, {
                     AttendanceSubmitted: false,
                     Plan: "",
                     StudentsSignedUp: [],
-                }, {merge: true});
-            });
+                })
+            })
+            batch.commit().then(() => {
+                Alert.alert("Teacher daily data has been reset!");
+            })
         });
-
-        Alert.alert("Teacher daily data has been reset!");
     }
 
     signOut = async () => {
@@ -114,21 +138,13 @@ class AdminScreen extends Component {
                         <Button title="Create Teacher Database" onPress={
                             () => 
                             {
-                                let confirm = this.confirm();
-                                if(confirm){
-                                    this.teachers.forEach((element) => 
-                                        this.CREATETEACHERDATABASE(element.split("_")[0], element.split("_")[1])
-                                    )
-                                }
+                                this.confirmCreateDatabase();
                             }
                         }/>
                         <Button title="Reset daily data" onPress={
                             () => 
                             {
-                                let confirm = this.confirm();
-                                if(confirm){
-                                    this.RESET();
-                                }
+                                this.confirmReset();
                             }
                         }/>
                     </View>

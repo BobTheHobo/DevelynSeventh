@@ -40,15 +40,13 @@ class TeacherSeventh extends Component {
     getStudentRoster = (teacher) => {
         const ref = firebase.firestore().collection('Teachers').doc(teacher);
 
-        ref.get().then((snapshot) => {
-            if(snapshot.exists){
-                this.setState({studentRoster: snapshot.data().StudentRoster})
+        this.ref.onSnapshot((doc) => {
+            if(doc.exists){
+                this.setState({studentRoster: doc.data().StudentRoster})
             }else{
                 console.warn("No document exists")
             }
-        }).catch((error) => {
-            console.warn("Error retrieving document: "+error);
-        });
+        })
     }
 
     submitConfirm = () => {
@@ -68,9 +66,9 @@ class TeacherSeventh extends Component {
     }
 
     submitAttendance(){
-        this.ref.set({
+        this.ref.update({
             AttendanceSubmitted : true
-        }, { merge: true });
+        });
         this.state.submitted = true;
         this.setState({submitTitle: "Attendance Submitted!"});
     }
@@ -103,6 +101,7 @@ class TeacherSeventh extends Component {
                                 />
                             )
                         }}
+                        extraData={this.state.studentRoster}
                         keyExtractor={(item, index) => item}
                     >
                 </FlatList>

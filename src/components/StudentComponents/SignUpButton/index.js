@@ -45,10 +45,10 @@ class SignUpButton extends Component {
 
     checkFull = () => {
         if(this.state.currentNum == this.state.maxNum){
-            this.teachRef.set({Full: true}, {merge: true});
+            this.teachRef.update({Full: true});
             return true;
         }else{
-            this.teachRef.set({Full: false}, {merge: true});
+            this.teachRef.update({Full: false});
             return false;
         }
     }
@@ -124,7 +124,7 @@ class SignUpButton extends Component {
         if(this.state.signedUpWith==''){
 
             //Change student's signedUpWith
-            this.ref.set({SignedUpWith: teacher}, {merge: true});
+            this.ref.update({SignedUpWith: teacher});
 
             //Add student to teacher's 7th and add 1 to numsignedup
             this.teachRef.update({NumSignedUp: firebase.firestore.FieldValue.increment(1)});
@@ -138,7 +138,7 @@ class SignUpButton extends Component {
             this.state.currentRef.update({NumSignedUp: firebase.firestore.FieldValue.increment(-1)});
 
             //Change student's signedUpWith
-            this.ref.set({SignedUpWith: teacher}, {merge: true});
+            this.ref.update({SignedUpWith: teacher});
 
             //Add student to teacher's 7th and add 1 to numsignedup
             this.teachRef.update({NumSignedUp: firebase.firestore.FieldValue.increment(1)});

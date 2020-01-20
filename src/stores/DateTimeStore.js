@@ -1,24 +1,14 @@
 import { observable, computed, action, decorate } from 'mobx';
 
-const userTypes = {
-    STUDENT: "student",
-    TEACHER: "teacher",
-    ADMIN: "admin",
-    INVALID: "invalid"
-}
-
-export class UserInfoStore {
+export class DateTimeStore {
     constructor(rootStore) {
         this.rootStore = rootStore;
     }
 
     //login stuff
-    isSigninInProgress = false;
     loading = true;
-    userType = userTypes.INVALID;
-
-    //user info
-    photoURL = "";
+    curTime = '';
+    curDate = '';
 
     determineUserType = (googleInfo) => {
         if(googleInfo.user.email.indexOf("@jeffcoschools.us") != -1){
@@ -36,9 +26,8 @@ export class UserInfoStore {
     }
 }
 
-decorate(UserInfoStore, {
-    isSigninInProgress: observable,
-    userType: observable,
+decorate(DateTimeStore, {
     loading: observable,
-    determineUserType: action
+    curTime: observable,
+    curDate: observable
 })

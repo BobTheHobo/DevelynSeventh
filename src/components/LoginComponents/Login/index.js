@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import { View, ActivityIndicator, TextInput, Text, Button, Alert } from 'react-native'
+import React, { useEffect } from 'react'
+import { View, ActivityIndicator, Button, Alert } from 'react-native'
 import styles from './styles'
+//MobX
 import { observer } from 'mobx-react';
-
-//import google stuff
+import { RootStoreContext } from '../../../stores/RootStore';
+//Google
 import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin';
 import { firebase } from '@react-native-firebase/auth';
  
@@ -14,31 +15,24 @@ import { firebase } from '@react-native-firebase/auth';
             https://firebase.google.com/docs/auth/web/auth-state-persistence
     */
 
-class Login extends Component {
+export default Login = observer((props) => {
+    //observables
+    const rootStore = React.useContext(RootStoreContext);
+    const store = rootStore.userInfoStore;
+    //styles
+    const { container , input, button, text } = styles;
 
-    constructor(){
-		super();
-		
-		this.state = {
-			loading: true,
-			userType: "",
-		};
+    GoogleSignin.configure({
+        //scopes: ['https://www.googleapis.com/auth/drive.readonly'],
+        webClientId: '6356092898-8e4e2qlel67rvpdanh1rg1f1n0che9h8.apps.googleusercontent.com',
+    });
 
-        GoogleSignin.configure({
-            //scopes: ['https://www.googleapis.com/auth/drive.readonly'],
-            webClientId: '6356092898-8e4e2qlel67rvpdanh1rg1f1n0che9h8.apps.googleusercontent.com',
-        });
-    }
+    useEffect(() => { //essentially the same as componentDidMount()
+        isUserSignedIn();
+    })
 
-    componentDidMount(){
-        this.isUserSignedIn();
-	}
-
-    render() {
-        const { container , input, button, text } = styles;
-		const { isSigninInProgress } = this.state;
-		
-		if(this.state.loading == true){
+    render = () => {
+		if(store.loading){
 			return (
 				<View style={container}>
 					<ActivityIndicator size="large" color="green"/>
@@ -52,9 +46,10 @@ class Login extends Component {
 						style={{ width: 200, height: 48}}
 						size={GoogleSigninButton.Size.Wide}
 						color={GoogleSigninButton.Color.Light}
-						onPress={() => this.onSignInPress()}
-						disabled={isSigninInProgress}
+						onPress={() => onSignInPress()}
+						disabled={store.isSigninInProgress}
 					/>
+                    <Button title="sign out" onPress={()=>signOut()}/>
 				</View>
 			)
 		}
@@ -62,22 +57,22 @@ class Login extends Component {
 
     onSignInPress = async () => {
         try{
-            this.setState({ isSigninInProgress: true });
+            store.isSigninInProgress = true;
 
-			//initiate google sign-in
-			this.setState({loading: true});
+            //initiate google sign-in
+            store.loading = true;
             await GoogleSignin.hasPlayServices();
 			const user = await GoogleSignin.signIn();
-            this.determineUserType(user);
+            store.determineUserType(user);
 
-            if(this.state.userType == "invalid"){
+            if(store.userType === "invalid"){
 
                 Alert.alert("Error!", user.user.email+"\nis not a valid email. \n\nPlease use a @jeffcoschools.us or @jeffco.k12.co.us email.")
 
                 await GoogleSignin.signOut();
 
-				this.setState({ isSigninInProgress: false});
-				this.setState({loading: false});
+                store.isSigninInProgress = false;
+                store.loading = false;
             }
             else{
                 // create a new firebase credential with the token
@@ -89,15 +84,15 @@ class Login extends Component {
 
                 Alert.alert("Success!","You have logged in with "+user.user.email+"!");
 
-				this.setState({isSigninInProgress: false});
-				this.setState({loading: false});
+                store.isSigninInProgress = false;
+                store.loading = false;
 
-                if(this.state.userType == "student"){
-                    this.props.navigation.navigate('StudentSeventh');
-                }else if(this.state.userType == "teacher"){
-                    this.props.navigation.navigate('TeacherSeventh');
-                }else if(this.state.userType == "admin"){
-                    this.props.navigation.navigate('Admin');
+                if(store.userType == "student"){
+                    props.navigation.navigate('StudentSeventh');
+                }else if(store.userType == "teacher"){
+                    props.navigation.navigate('TeacherSeventh');
+                }else if(store.userType == "admin"){
+                    props.navigation.navigate('Admin');
                 }else{
                     Alert.alert("Something went wrong!")
                 }
@@ -105,19 +100,7 @@ class Login extends Component {
         } catch (error){
             console.warn(error);
             this.handleSignInError(error);
-            this.setState({loading: false});
-        }
-    }
-
-    determineUserType = (user1) => {
-        if(user1.user.email.indexOf("@jeffcoschools.us") != -1){
-            this.setState({userType: 'student'});
-        }else if(user1.user.email.indexOf("@jeffco.k12.co.us") != -1){
-            this.setState({userType: 'teacher'});
-        }else if(user1.user.email == "thienvietngomai@gmail.com" == 1){
-			this.setState({userType: 'teacher'});
-        }else{
-			this.setState({userType: 'invalid'});
+            store.loading = false;
         }
     }
 	
@@ -126,30 +109,30 @@ class Login extends Component {
 		try {
 			if(user){
 				const userInfo = await GoogleSignin.signInSilently();
-				this.determineUserType(userInfo);
+				store.determineUserType(userInfo);
 
-				if(this.state.userType == "teacher"){
-					this.props.navigation.navigate('TeacherSeventh')
-				}else if(this.state.userType == "student"){
-					this.props.navigation.navigate('StudentSeventh');
+				if(store.userType == "teacher"){
+				 	props.navigation.navigate('TeacherSeventh')
+				}else if(store.userType == "student"){
+				 	props.navigation.navigate('StudentSeventh');
 				}
 			}
-			this.setState({loading: false});
+            store.loading = false;
 		} catch (error) {
 			this.handleSignInError(error);
-			this.setState({loading: false});
+            store.loading = false;
 		}
 	};
 
-    //This is here for testing purposes only, not actually used.
+    //This is here for testing purposes only, won't be in final
     signOut = async () => {
         try{
             await GoogleSignin.signOut();
 			await firebase.auth().signOut();
-            this.props.navigation.navigate('Login');
-            this.setState({loading: true});
+            //props.navigation.navigate('Login');
+            store.loading = true;
         }catch(error){
-            //console.log(error);
+            console.log(error);
         }
     }
 
@@ -170,7 +153,7 @@ class Login extends Component {
         } else {
             this.showSignInError(JSON.stringify(error));
         }
-        this.setState({ isSigninInProgress: false });
+        store.isSigninInProgress = false;
     }
 
     getGooglePlayServices = async () => {
@@ -193,6 +176,9 @@ class Login extends Component {
             }
         )
     }
-}
 
-export default Login
+    return(
+        render()
+    )
+}
+)

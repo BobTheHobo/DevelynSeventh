@@ -5,8 +5,7 @@ import TeacherSeventh from '../../../components/TeacherComponents/TeacherSeventh
 import BottomNavBar from '../../../routes/BottomNavBar'
 
 //Styling
-import { View, Button, Image, SafeAreaView } from 'react-native'
-import { Surface, Text } from 'react-native-paper';
+import { View, SafeAreaView } from 'react-native'
 import styles from './styles'
 
 //Icons
@@ -23,7 +22,7 @@ class TeacherSeventhScreen extends Component {
     };
 
     render() {
-        const { container, infoDisp, title, headerContainer, buttons, selector, surface } = styles;
+        const { container, infoDisp, headerContainer, buttons } = styles;
 
         return (
             <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>

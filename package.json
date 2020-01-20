@@ -8,12 +8,15 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/cli": "^3.0.4",
     "@react-native-firebase/app": "^0.2.3",
     "@react-native-firebase/auth": "^0.2.3",
     "@react-native-firebase/firestore": "^0.2.3",
+    "mobx": "^5.15.2",
+    "mobx-react": "^6.1.5",
     "prop-types": "^15.7.2",
-    "react": "16.8.6",
-    "react-native": "0.60.5",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
     "react-native-elevated-view": "^0.0.6",
     "react-native-gesture-handler": "^1.3.0",
     "react-native-global-props": "^1.1.5",

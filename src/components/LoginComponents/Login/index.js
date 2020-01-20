@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, ActivityIndicator, TextInput, Text, Button, Alert } from 'react-native'
 import styles from './styles'
+import { observer } from 'mobx-react';
 
 //import google stuff
 import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin';
@@ -12,6 +13,7 @@ import { firebase } from '@react-native-firebase/auth';
             we use Google log in and log out, we should be fine.
             https://firebase.google.com/docs/auth/web/auth-state-persistence
     */
+
 class Login extends Component {
 
     constructor(){

@@ -41,6 +41,7 @@ class AttendanceButton extends Component {
         });
     }
 
+    //Looks like I've recreated (in my ignorance) javascript's existing switch() function TODO: replace to make it cleaner?
     switch = (index) => {
         if(index==1){
             this.switchPresent(this.state.present);
@@ -113,7 +114,7 @@ class AttendanceButton extends Component {
                                 <Ionicons name={this.lateIcon} size={30} color={this.lateColor} />
                             </View>
                         </TouchableWithoutFeedback>
-                        <TouchableWithoutFeedback style={absentButton} onPress={() => this.switch(3)}>
+                        <TouchableWithoutFeedback style={absentButton} onPress={() => this.switch(3)}> 
                             <View style={presentButton}>
                                 <Ionicons name={this.absentIcon} size={30} color={this.absentColor} />
                             </View>

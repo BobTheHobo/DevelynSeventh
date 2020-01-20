@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 
-import { StyleSheet, View, Alert, Text, ActivityIndicator} from 'react-native';
-
-import { firebase } from '@react-native-firebase/firestore';
-import SignUpButton from '../../StudentComponents/SignUpButton';
+import {View, Text} from 'react-native';
 
 class DateTime extends Component {
-  _isMounted = false;
 
   constructor(props) {
     super(props);
@@ -17,30 +13,21 @@ class DateTime extends Component {
     };
   }
   
-componentDidMount() {
-  this._isMounted = true;
-  if(this._isMounted){
-    date = new Date();
-    setInterval( () => {
-        this.setState({
-          curTime : new Date().toLocaleTimeString(), curDate:  date.toLocaleDateString()
-        })
+  componentDidMount() {
+    this.interval = setInterval( () => {
+      this.date = new Date();
+      this.setState({
+        curTime : this.date.toLocaleTimeString(), curDate: this.date.toLocaleDateString()
+      })
     },1000)
-    this.state.loading = false;
   }
-}
 
-componentWillUnmount() {
-  this._isMounted = false;
-}
-
-render() {
-  if(this.state.loading){
-    return(
-      <ActivityIndicator size='large' color='green'/>
-    )
+  componentWillUnmount() {
+    clearInterval(this.interval);
+    console.warn("Timer cleared");
   }
-  else{
+
+  render() {
     return (
       <View>
         <Text style={{fontSize: this.props.fontSize}}>
@@ -49,8 +36,49 @@ render() {
       </View>
     );
   }
-}
 
 }
 
 export default DateTime
+
+/* MobX version
+import React, { Component, useEffect } from 'react';
+
+import { StyleSheet, View, Alert, Text, ActivityIndicator} from 'react-native';
+
+import { firebase } from '@react-native-firebase/firestore';
+import SignUpButton from '../../StudentComponents/SignUpButton';
+import { observer } from 'mobx-react';
+import { RootStoreContext } from '../../../stores/RootStore';
+
+export default DateTime = observer((props) => {
+  const rootStore = React.useContext(RootStoreContext);
+  const store = rootStore.dateTimeStore;
+  
+  useEffect(() => {
+    const interval = setInterval(() => store.clockTick(), 1000);
+    console.warn("timer active");
+
+    //essentially the same as componentWillUnmount()
+    return cleanup = () => {
+      clearInterval(interval);
+      console.warn("cleaned up timer");
+    }
+  }, [])
+
+  render = () => {
+      return (
+        <View>
+          <Text style={{fontSize: props.fontSize}}>
+            {store.curDate+'\n'+store.curTime}
+          </Text>
+        </View>
+      );
+  }
+
+  return(
+    render()
+  )
+
+})
+*/

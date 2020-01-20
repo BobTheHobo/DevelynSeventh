@@ -7,27 +7,17 @@ export class DateTimeStore {
 
     //login stuff
     loading = true;
-    curTime = '';
-    curDate = '';
+    curTime = new Date().toLocaleTimeString();
+    curDate = new Date().toLocaleDateString();
 
-    determineUserType = (googleInfo) => {
-        if(googleInfo.user.email.indexOf("@jeffcoschools.us") != -1){
-            this.userType = userTypes.STUDENT;
-        }else if(googleInfo.user.email.indexOf("@jeffco.k12.co.us") != -1){
-            this.userType = userTypes.TEACHER;
-        }else if(googleInfo.user.email == "thienvietngomai@gmail.com" == 1){
-            this.userType = userTypes.TEACHER;
-        }else if(googleInfo.user.email == "" == 1){
-            //admins go here
-            this.userType = userTypes.ADMIN;
-        }else{
-            this.userType = userTypes.INVALID;
-        }
+    clockTick(newTime = new Date().toLocaleTimeString(), newDate = new Date().toLocaleDateString()) {
+        this.curTime = newTime;
+        this.curDate = newDate;
     }
 }
 
 decorate(DateTimeStore, {
-    loading: observable,
     curTime: observable,
-    curDate: observable
+    curDate: observable,
+    clockTick: action,
 })

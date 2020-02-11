@@ -58,31 +58,3 @@ export default class App extends Component {
     )
   }
 }
-
-/*
-const AppStack = createDrawerNavigator({
-  login: {screen: LoginScreen},
-  seventh: {screen: SeventhScreen},
-}, {
-  contentComponent: ({navigation}) => <Sidebar navigation={navigation}/>
-})
-
-const AppSlider = createAppContainer(AppStack);
-*/
-
-const AppNavigator = createStackNavigator({
-  Login: LoginScreen,
-  Seventh: SeventhScreen,
-},
-{
-  initialRouteName: 'Login',
-  headerMode: 'none',
-  navigationOptions: {
-    headerVisible: false
-  }
-}
-)
-
-const AppContainer = createAppContainer(AppNavigator);
-
-export default App;

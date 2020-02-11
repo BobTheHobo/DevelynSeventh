@@ -4,10 +4,10 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
     },
     title: {
-        fontSize: 35,
+        fontSize: 25,
+        textAlign: 'center',
         margin: 10,
-    }
+    },
 });

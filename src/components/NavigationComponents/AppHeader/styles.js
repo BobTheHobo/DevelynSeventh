@@ -2,9 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   headerBar: {
-    flex: 1,
+    //flex: 1,
     flexDirection: 'row',
-    height: 45,
+    height: 37,
     backgroundColor: 'white',//'#f9f9f9',
     shadowColor: 'black',
     shadowOpacity: 0,

@@ -1,4 +1,5 @@
-import { observable, computed, action, decorate } from 'mobx';
+import { observable, computed, action, decorate, autorun } from 'mobx';
+import { firebase } from '@react-native-firebase/firestore';
 
 const userTypes = {
     STUDENT: "student",
@@ -18,7 +19,35 @@ export class UserInfoStore {
     userType = userTypes.INVALID;
 
     //user info
+    username = "";
     photoURL = "";
+
+    //firebase
+    userFRef;
+
+    setUsername = () => {
+        this.username = firebase.auth().currentUser.displayName;
+    }
+
+    //make sure the "name" field in firestore is the same as the google displayName
+    setFirestoreRef = () => {
+        if(this.userType === userTypes.STUDENT){
+            this.userFRef = firebase.firestore().collection('Students').where("name","==",this.username);
+        }else if(this.userType === userTypes.TEACHER){
+            this.userFRef = firebase.firestore().collection('Teachers').where("name","==",this.username);
+        }
+    }
+
+    getPlan = () => {
+        this.setFirestoreRef();
+        firebase.firestore().collection('Teachers').doc('Viet').get().then((doc) => {
+            if(doc.exists){
+                this.plan = doc.data().Plan;
+            }else{
+                this.plan = "not working?";
+            }
+        });
+    }
 
     determineUserType = (googleInfo) => {
         if(googleInfo.user.email.indexOf("@jeffcoschools.us") != -1){
@@ -40,5 +69,11 @@ decorate(UserInfoStore, {
     isSigninInProgress: observable,
     userType: observable,
     loading: observable,
-    determineUserType: action
+    username: observable,
+    userFRef: observable,
+    plan: observable,
+    getUsername: action,
+    setFirestoreRef: action,
+    determineUserType: action,
+    getPlan: action,
 })

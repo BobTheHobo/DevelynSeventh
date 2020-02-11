@@ -80,6 +80,9 @@ export default Login = observer((props) => {
                 // login with credential
                 const firebaseUserCredential = await firebase.auth().signInWithCredential(credential);
 
+                store.setUsername();
+                loginFinished();
+
                 //console.warn(JSON.stringify(firebaseUserCredential.user.toJSON()));
 
                 Alert.alert("Success!","You have logged in with "+user.user.email+"!");
@@ -104,25 +107,32 @@ export default Login = observer((props) => {
         }
     }
 	
+    
 	isUserSignedIn = async () => {
-		const user = await GoogleSignin.isSignedIn();
+        const user = await GoogleSignin.isSignedIn();
 		try {
-			if(user){
-				const userInfo = await GoogleSignin.signInSilently();
-				store.determineUserType(userInfo);
-
+            if(user){
+                const userInfo = await GoogleSignin.signInSilently();
+                loginFinished();
+                store.determineUserType(userInfo);
+                
 				if(store.userType == "teacher"){
-				 	props.navigation.navigate('TeacherSeventh')
+                    props.navigation.navigate('TeacherSeventh')
 				}else if(store.userType == "student"){
-				 	props.navigation.navigate('StudentSeventh');
+                    props.navigation.navigate('StudentSeventh');
 				}
 			}
             store.loading = false;
 		} catch (error) {
-			this.handleSignInError(error);
+            this.handleSignInError(error);
             store.loading = false;
 		}
-	};
+    };
+
+    loginFinished = () => {
+        store.setUsername();
+        store.setFirestoreRef();
+    }
 
     //This is here for testing purposes only, won't be in final
     signOut = async () => {

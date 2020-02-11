@@ -24,7 +24,6 @@ class DateTime extends Component {
 
   componentWillUnmount() {
     clearInterval(this.interval);
-    console.warn("Timer cleared");
   }
 
   render() {

@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-container: {
+surface: {
     flex: 1,
     padding: 0,
     margin: 10,
     //backgroundColor: 'grey'
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    elevation: 1,
 },
 title: {
     padding: 10,
@@ -14,18 +15,41 @@ title: {
     fontWeight: 'bold'
 },
 textEdit: {
-    height: 40,
     marginHorizontal: 10,
-    backgroundColor: 'lightgrey'
+    //backgroundColor: 'lightgrey'
 },
 confirmTextEditButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     //backgroundColor: 'lightblue',
-    height: 40,
     margin: 10,
     marginTop: 10,
 },
+confirmNumEditButtons: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    alignItems: 'center'
+},
+numEdit: {
+    height: 40,
+    marginHorizontal: 10,
+    flexDirection: 'row',
+},
+numButtons: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#2196F3',
+    height: 19,
+    borderRadius: 2,
+    elevation: 4,
+    width: 30,
+},
+numUpDown:{
+    height: 40,
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+},  
 email: {
     fontSize: 15,
 },

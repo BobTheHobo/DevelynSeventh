@@ -29,6 +29,7 @@ class AttendanceButton extends Component {
 
     componentDidMount(){
         this.getStudentNames();
+        console.log(this.props.name)
     }
 
     getStudentNames = async () => {

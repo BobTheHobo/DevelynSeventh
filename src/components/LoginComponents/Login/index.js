@@ -29,7 +29,7 @@ export default Login = observer((props) => {
 
     useEffect(() => { //essentially the same as componentDidMount()
         isUserSignedIn();
-    })
+    }, [])
 
     render = () => {
 		if(store.loading){

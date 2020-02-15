@@ -4,7 +4,7 @@ export default StyleSheet.create({
     container: {
         justifyContent: 'center',
         flex: 1,
-        backgroundColor: '#fafafa'
+        backgroundColor: '#fafafa',
     },
     headerContainer: {
         flex: 1,

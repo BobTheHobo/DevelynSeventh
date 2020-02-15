@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import { View, Text, TextInput, Button, TouchableHighlight } from 'react-native'
+import { Surface } from 'react-native-paper'
 import styles from './styles'
 //MobX
 import { observer } from 'mobx-react';
@@ -15,7 +16,7 @@ export default PlanEditor = observer((props) => {
     const rootStore = React.useContext(RootStoreContext);
     const store = rootStore.planStore;
     //styles
-    const { container, title, textEdit, confirmTextEditButtons, confirmNumEditButtons, numEdit, numButtons, numUpDown} = styles;
+    const { surface, title, textEdit, confirmTextEditButtons, confirmNumEditButtons, numEdit, numButtons, numUpDown} = styles;
 
     //I know you're not supposed to use both MobX and React.state, but it works so who cares :P
     const [value, onChangeText] = React.useState(store.currentPlan);
@@ -37,39 +38,41 @@ export default PlanEditor = observer((props) => {
         return function cleanup() {
             unsubscribe();
         }
-    })
+    }, [])
 
     render = () => {
         return (
-            <View style={container}>
-                <Text style={title}>Current Plan:</Text>
-                <View style={textEdit}>
-                    <TextInput
-                        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-                        defaultValue = {store.currentPlan}
-                        onChangeText={text => onChangeText(text)}
-                        value={(store.editingPlan) ? value : store.currentPlan} //ensures that plan displayed is always in sync with firestore, even if plan is being altered from firestore
-                        editable={store.editingPlan}
-                        onSubmitEditing={()=>{setFirestore(type.PLAN, value), store.switchEdit(type.PLAN)}}
-                        ref={textInput}
-                    />
+            <Surface style={surface}>
+                <View>
+                    <Text style={title}>Current Plan:</Text>
+                    <View style={textEdit}>
+                        <TextInput
+                            style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                            defaultValue = {store.currentPlan}
+                            onChangeText={text => onChangeText(text)}
+                            value={(store.editingPlan) ? value : store.currentPlan} //ensures that plan displayed is always in sync with firestore, even if plan is being altered from firestore
+                            editable={store.editingPlan}
+                            onSubmitEditing={()=>{setFirestore(type.PLAN, value), store.switchEdit(type.PLAN)}}
+                            ref={textInput}
+                            />
+                    </View>
+                    {renderButtons(type.PLAN)}
+                    <Text style={title}>Max Number of Students:</Text>
+                    <View style={numEdit}>
+                        <TextInput
+                            style={{ height: 40, width: 40, marginRight: 5, borderColor: 'gray', borderWidth: 1}}
+                            defaultValue = {store.maxNum}
+                            onChangeText={num => onChangeNum(num)}
+                            value={(store.editingNum) ? numValue : store.maxNum}
+                            editable={store.editingNum}
+                            onSubmitEditing={()=>{setFirestore(type.NUM, changeNum(numValue, upOrDown.NONE)), store.switchEdit(type.NUM)}}
+                            maxLength={2}
+                            keyboardType={"number-pad"}
+                            />
+                        {renderButtons(type.NUM)}
+                    </View>
                 </View>
-                {renderButtons(type.PLAN)}
-                <Text style={title}>Max Number of Students:</Text>
-                <View style={numEdit}>
-                    <TextInput
-                        style={{ height: 40, width: 40, marginRight: 5, borderColor: 'gray', borderWidth: 1}}
-                        defaultValue = {store.maxNum}
-                        onChangeText={num => onChangeNum(num)}
-                        value={(store.editingNum) ? numValue : store.maxNum}
-                        editable={store.editingNum}
-                        onSubmitEditing={()=>{setFirestore(type.NUM, changeNum(numValue, upOrDown.NONE)), store.switchEdit(type.NUM)}}
-                        maxLength={2}
-                        keyboardType={"number-pad"}
-                    />
-                    {renderButtons(type.NUM)}
-                </View>
-            </View>
+            </Surface>
         )
     }
 

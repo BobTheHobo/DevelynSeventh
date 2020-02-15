@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-container: {
+surface: {
     flex: 1,
     padding: 0,
     margin: 10,
     //backgroundColor: 'grey'
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    elevation: 1,
 },
 title: {
     padding: 10,

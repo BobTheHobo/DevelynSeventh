@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import { TouchableHighlight, TouchableWithoutFeedback, View, Text, Alert } from 'react-native'
+import { TouchableHighlight, TouchableWithoutFeedback, View, Text, Button, Alert } from 'react-native'
 import { Surface } from 'react-native-paper';
 import styles from './styles'
 
 import {firebase} from '@react-native-firebase/firestore'
 
+import { RootStoreContext } from '../../../stores/RootStore'
+
 //Icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
  
-class AttendanceButton extends Component {
+class DisplayButton extends Component {
     constructor(props){
         super(props);
         this.state = ({
@@ -17,7 +19,10 @@ class AttendanceButton extends Component {
             present: false,
             late: false,
             absent: false,
+            required: false,
         });
+
+        this.ref =  firebase.firestore().collection('Students').doc(this.props.name);
 
         this.presentIcon = "md-radio-button-off";
         this.presentColor = "#dedede";
@@ -25,6 +30,11 @@ class AttendanceButton extends Component {
         this.lateColor = "#dedede";
         this.absentIcon = "md-radio-button-off";
         this.absentColor = "#dedede";
+        
+        this.requireColor = "#2196F3";
+        this.requireText = "Require";
+
+        this.currentTeacher = firebase.auth().currentUser.displayName;
     }
 
     componentDidMount(){
@@ -33,13 +43,33 @@ class AttendanceButton extends Component {
     }
 
     getStudentNames = async () => {
-        firebase.firestore().collection('Students').doc(this.props.name).get().then((doc) => {
+        this.ref.get().then((doc) => {
             if(doc.exists) {
                 this.setState({studentName: doc.data().Name})
             }else{
                 console.warn("No student document exists");
             }
         });
+    }
+
+    requireStudent = (req) => {
+        if(req){
+            this.ref.update({
+                Required: this.currentTeacher
+            }).then(() => {
+                console.warn("Student successfully required");
+            }).catch((error)=>{
+                console.warn("Error requiring student: ", error);
+            })
+        }else{
+            this.ref.update({
+                Required: ""
+            }).then(()=>{
+                console.warn("Student successfully unrequired");
+            }).catch((error)=>{
+                console.warn("Error unrequiring student: ", error);
+            })
+        }
     }
 
     //Looks like I've recreated (in my ignorance) javascript's existing switch() function TODO: replace to make it cleaner?
@@ -95,12 +125,26 @@ class AttendanceButton extends Component {
         }
     }
 
-    render() {
-        const { container, name, surface, presentButton, lateButton, absentButton} = styles;
+    switchRequire = (type) => {
+        if(type){
+            this.setState({required: true});
+            this.requireColor = 'green';
+            this.requireText = "Required";
+            this.requireStudent(true);
+        }else{
+            this.setState({required: false});
+            this.requireColor = "#2196F3";
+            this.requireText = "Require";
+            this.requireStudent(false);
+        }
+    }
 
-        return (
+    render() {
+        const { container, name, surface, surfaceRequire, presentButton, lateButton, absentButton, requireButton} = styles;
+
+        const AttendanceButton = (
             <TouchableHighlight>
-                <Surface style={surface}>
+                <Surface style={surface, {margin: 5}}>
                     <View style={container}>
                         <View style={name}>
                             <Text>{this.state.studentName}</Text>
@@ -124,7 +168,36 @@ class AttendanceButton extends Component {
                 </Surface>
             </TouchableHighlight>
         )
+
+        const RequireButton = (
+            <TouchableHighlight>
+                <Surface style={surface, {marginVertical: 5}}>
+                    <View style={container}>
+                        <View style={name}>
+                            <Text>{this.state.studentName}</Text>
+                        </View>
+                        <View style={requireButton}>
+                            <Button title={this.requireText} onPress={()=>{this.switchRequire(!this.state.required)}} color={this.requireColor}/>
+                        </View>
+                    </View>
+                </Surface>
+            </TouchableHighlight>
+        )
+
+        if(this.props.type==="require"){
+            return(
+                RequireButton
+            )
+        }else if(this.props.type==="attendance"){
+            return(
+                AttendanceButton
+            )
+        }else{
+            return(
+                AttendanceButton
+            )
+        }
     }
 }
 
-export default AttendanceButton
+export default DisplayButton

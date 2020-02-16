@@ -17,7 +17,7 @@ export default StyleSheet.create({
     },
     surface:{
         flex:1,
-        margin:5,
+        //margin:5,
         flexDirection: 'row', 
         alignItems: 'center',
         height: 60,
@@ -35,4 +35,7 @@ export default StyleSheet.create({
         flex: 1.2,
         margin: 6
     },
+    requireButton:{
+        marginRight: 10,
+    }
 });

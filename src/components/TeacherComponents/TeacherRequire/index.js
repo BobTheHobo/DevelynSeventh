@@ -7,8 +7,7 @@ import { observer } from 'mobx-react';
 import { RootStoreContext } from '../../../stores/RootStore';
 
 import {firebase} from '@react-native-firebase/firestore'
-import RequireButton from '../RequireButton';
-import AttendanceButton from '../AttendanceButton';
+import DisplayButton from '../DisplayButton'
 
 export default TeacherRequire = (props) => {
     //observables
@@ -25,23 +24,19 @@ export default TeacherRequire = (props) => {
 
     render = () => {
         return (
-            <Surface style={surface}>
-                <View>
-                    <Text>Hello</Text>
-                    <FlatList 
-                        data={students}
-                        renderItem={({item, index}) => {
-                            return(
-                                <View>
-                                    <AttendanceButton name={item}/>
-                                    <RequireButton name={item}/>
-                                </View>
-                            )
-                        }}
-                        keyExtractor={(item, index) => item}
-                    />
-                </View>
-            </Surface>
+            <View style={surface}>
+                <FlatList 
+                    data={students}
+                    renderItem={({item, index}) => {
+                        return(
+                            <View>
+                                <DisplayButton name={item} type={"require"}/>
+                            </View>
+                        )
+                    }}
+                    keyExtractor={(item, index) => item}
+                />
+            </View>
         )
     }
 

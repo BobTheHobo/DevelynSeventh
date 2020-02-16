@@ -5,7 +5,6 @@ surface: {
     flex: 1,
     elevation: 1,
     margin: 10,
-    backgroundColor: 'lightgrey'
 },
 container: {
     flex: 1,

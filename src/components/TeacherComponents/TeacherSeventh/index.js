@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Button, Text, TouchableOpacity, List, ListItem, FlatList, Alert } from 'react-native'
 import styles from './styles'
 import { firebase } from '@react-native-firebase/firestore';
-import AttendanceButton from '../AttendanceButton';
+import DisplayButton from '../DisplayButton';
 import { GoogleSignin } from 'react-native-google-signin';
 
 class TeacherSeventh extends Component {
@@ -96,8 +96,9 @@ class TeacherSeventh extends Component {
                         data={this.state.studentRoster}
                         renderItem={({item, index}) => {
                             return(
-                                <AttendanceButton 
+                                <DisplayButton 
                                     name={item}
+                                    type={"attendance"}
                                 />
                             )
                         }}

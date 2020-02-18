@@ -172,13 +172,15 @@ class SignUpButton extends Component {
                         </View>
                         <View style={teacher}>
                             <View style={split}>
-                                <Text style={name}>{this.props.teacher}</Text>
-                                <Text style={plan}>{this.state.plan}</Text>
+                                {/* <View style={{flex: 1}}> */}
+                                    <Text style={name}>{this.props.teacher}</Text>
+                                {/* </View>
+                                <View style={{flex:1}}> */}
+                                    <Text style={plan}>{this.state.plan}</Text>
+                                {/* </View> */}
                             </View>
                         </View>
-                        <View style={full}>
-                            {this.fullIndicator()}
-                        </View>
+                        {this.fullIndicator()}
                         <View style={count}>
                             <Text>{this.state.currentNum+'/'+this.state.maxNum}</Text>
                         </View>
@@ -191,8 +193,10 @@ class SignUpButton extends Component {
     fullIndicator = () => {
         if(this.state.full){
             return(
-                <View style={styles.fullButton}>
-                    <Text style={{color: 'white', fontWeight: 'bold'}}>FULL</Text>
+                <View style={styles.full}>
+                    <View style={styles.fullButton}>
+                        <Text style={{color: 'white', fontWeight: 'bold'}}>FULL</Text>
+                    </View>
                 </View>
             )
         }

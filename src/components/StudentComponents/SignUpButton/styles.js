@@ -5,25 +5,21 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'row', 
         alignItems: 'center',
-        height: 40,
         margin: 0,
     },
     number: {
-        flex: 1,
-        borderColor: 'grey',
-        borderRightWidth: 1,
-        borderWidth: 0,
+        width: 30,
         alignItems: 'center', 
         justifyContent: 'center',
-        height:40,
+        minHeight:40,
     },
     teacher:{
-        flex: 9,
+        flex: 1,
         borderColor: 'grey',
-        borderWidth: 0,
+        borderLeftWidth: 1,
         alignItems: 'flex-start',
         paddingLeft: 10,
-        height: 40
+        minHeight: 40, 
     },
     split:{
         flex: 1,
@@ -33,7 +29,7 @@ export default StyleSheet.create({
         flex: 14,
         textAlignVertical: 'center',
         fontSize: 15,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     plan:{
         flex: 13,
@@ -45,22 +41,22 @@ export default StyleSheet.create({
         flex:1,
         flexDirection: 'row', 
         alignItems: 'center',
-        height: 40,
+        minHeight: 40,
         elevation: 1,
     },
     full: {
-        flex: 2,
+        width: 50,
         margin: 5,
     },
     fullButton: {
-        flex: 1,
+        width: 50,
         backgroundColor: 'red',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 5
     },
     count: {
-        flex: 2,
+        width: 40,
         alignItems: 'flex-end',
         marginEnd: 10
     },

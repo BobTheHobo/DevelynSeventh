@@ -17,8 +17,10 @@ class StudentSeventh extends Component {
             loading: true,
         });
 
-        this.email = firebase.auth().currentUser.email
-        this.studentNum = this.email.slice(0,this.email.indexOf('@jeffcoschools.us'));
+        // this.email = firebase.auth().currentUser.email
+        this.email = "2143486@jeffcoschools.us" //ALPHA TEST ONLY: REMOVE
+        // this.studentNum = this.email.slice(0,this.email.indexOf('@jeffcoschools.us'));
+        this.studentNum = "2143486"; //ALPHA TEST ONLY: REMOVE
         this.ref = firebase.firestore().collection('Students').doc(this.studentNum);
 
         this.teachRef = firebase.firestore().collection('Teachers');

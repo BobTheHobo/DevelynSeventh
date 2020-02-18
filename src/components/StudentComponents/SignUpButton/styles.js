@@ -43,7 +43,6 @@ export default StyleSheet.create({
     },
     surface:{
         flex:1,
-        margin:5,
         flexDirection: 'row', 
         alignItems: 'center',
         height: 40,

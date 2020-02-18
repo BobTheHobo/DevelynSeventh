@@ -29,11 +29,14 @@ class SignUpButton extends Component {
         this.teachRef.onSnapshot((doc) => {
             this.setState({
                 plan: doc.data().Plan,
-                full: doc.data().Full,
                 currentNum: doc.data().StudentsSignedUp.length,
                 maxNum: doc.data().Max,
             });
-            this.checkFull();
+            if(this.state.maxNum===this.state.currentNum){
+                this.setState({full: true});
+            }else{
+                this.setState({full: false});
+            }
         });
         this.ref.onSnapshot((doc) => {
             this.setState({
@@ -44,11 +47,9 @@ class SignUpButton extends Component {
     }
 
     checkFull = () => {
-        if(this.state.currentNum == this.state.maxNum){
-            this.teachRef.update({Full: true});
+        if(this.state.currentNum === this.state.maxNum){
             return true;
         }else{
-            this.teachRef.update({Full: false});
             return false;
         }
     }
@@ -71,8 +72,10 @@ class SignUpButton extends Component {
         var title='';
         var message='';
         var buttonMessage='Ok';
-        var signUpMsg='';
+        var signUpMsg="";
         var cancel=true;
+        
+        var allowSignUp=false;
 
         if(type == "confirm"){
             title=''+teacher;
@@ -80,6 +83,7 @@ class SignUpButton extends Component {
             buttonMessage='Cancel';
             signUpMsg='Yes';
             cancel=false;
+            allowSignUp=true;
         }
         else if(type == "full"){
             //Correct grammar? Hell yeah
@@ -99,15 +103,26 @@ class SignUpButton extends Component {
             message='Wrong/Missing signUpAlert code?'
         }
 
-        Alert.alert(
-            title,
-            message,
-            [
-              {text: buttonMessage},
-              {text: signUpMsg, onPress: () => this.signUp(teacher)}
-            ],
-            {cancelable: cancel},
-        );
+        if(allowSignUp){
+            Alert.alert(
+                title,
+                message,
+                [
+                {text: buttonMessage},
+                {text: signUpMsg, onPress: () => this.signUp(teacher)}
+                ],
+                {cancelable: cancel},
+            );
+        }else{
+            Alert.alert(
+                title,
+                message,
+                [
+                {text: buttonMessage},
+                ],
+                {cancelable: cancel},
+            );
+        }
     }
 
     processRequest = (teacher) => {
@@ -121,27 +136,24 @@ class SignUpButton extends Component {
     }
 
     signUp = teacher => {
-        if(this.state.signedUpWith==''){
+        if(!this.checkFull() && this.state.signedUpWith==''){
 
             //Change student's signedUpWith
             this.ref.update({SignedUpWith: teacher});
 
-            //Add student to teacher's 7th and add 1 to numsignedup
-            this.teachRef.update({NumSignedUp: firebase.firestore.FieldValue.increment(1)});
+            //Add student to teacher's 7th
             this.teachRef.update({StudentsSignedUp: firebase.firestore.FieldValue.arrayUnion(this.studentNum)});
 
         }
         else if(!this.checkFull() && (this.state.signedUpWith.localeCompare(teacher+'') != 0)){
 
-            //Remove student from current teacher signed up with, decrement numsignedup by 1
+            //Remove student from current teacher signed up with
             this.state.currentRef.update({StudentsSignedUp: firebase.firestore.FieldValue.arrayRemove(this.studentNum)});
-            this.state.currentRef.update({NumSignedUp: firebase.firestore.FieldValue.increment(-1)});
 
             //Change student's signedUpWith
             this.ref.update({SignedUpWith: teacher});
 
-            //Add student to teacher's 7th and add 1 to numsignedup
-            this.teachRef.update({NumSignedUp: firebase.firestore.FieldValue.increment(1)});
+            //Add student to teacher's 7th
             this.teachRef.update({StudentsSignedUp: firebase.firestore.FieldValue.arrayUnion(this.studentNum)});
 
         }
@@ -151,7 +163,8 @@ class SignUpButton extends Component {
         const { container, number, teacher, split, name, plan, surface, count, full } = styles;
 
         return (
-            <TouchableHighlight onPress={() => this.processRequest(this.props.teacher)}>
+            <TouchableHighlight style={{flex: 1, margin: 5}} 
+            onPress={(this.state.signedUpWith!==this.props.teacher) ? (() => this.processRequest(this.props.teacher)) : null}>
                 <Surface style={surface}>
                     <View style={container}>
                         <View style={number}>

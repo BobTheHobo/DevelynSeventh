@@ -35,7 +35,7 @@ class StudentSeventhScreen extends Component {
                     {/*<Button title='name' onPress={()=>{console.warn(firebase.auth().currentUser.displayName)}}/>*/}
                 </View>
 
-                <Button title={'Open modal'} onPress={()=>{this.props.navigation.navigate('Modal');}}/>
+                {/* <Button title={'Open modal'} onPress={()=>{this.props.navigation.navigate('Modal');}}/> */}
             </View>
             </SafeAreaView>
         )

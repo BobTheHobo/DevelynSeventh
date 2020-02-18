@@ -21,6 +21,7 @@ Student pages:
 -Debug
 
 App in general:
+-!!!!!!MAKE SURE ONLY ONE ACCOUNT CAN BE LOGGED ON AT ONCE!!!!!!
 -Publish to google play store
 -Publish to app store
 -Add Tran's loading art

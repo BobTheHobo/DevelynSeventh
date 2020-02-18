@@ -26,15 +26,18 @@ export class UserInfoStore {
     userFRef;
 
     setUsername = () => {
-        this.username = firebase.auth().currentUser.displayName;
+        // this.username = firebase.auth().currentUser.displayName;
+        this.username = "Viet Ngomai"; //ALPHA TESTING ONLY: REMOVE
     }
 
     //make sure the "name" field in firestore is the same as the google displayName
     setFirestoreRef = () => {
         if(this.userType === userTypes.STUDENT){
-            this.userFRef = firebase.firestore().collection('Students').where("name","==",this.username);
+            //this.userFRef = firebase.firestore().collection('Students').where("name","==",this.username);
+            this.userFRef = firebase.firestore().collection('Students').where("name","==","Viet Ngomai"); //ALPHA TESTING ONLY: REMOVE
         }else if(this.userType === userTypes.TEACHER){
-            this.userFRef = firebase.firestore().collection('Teachers').where("name","==",this.username);
+            // this.userFRef = firebase.firestore().collection('Teachers').where("name","==",this.username);
+            this.userFRef = firebase.firestore().collection('Teachers').where("name","==","Viet Ngomai"); //ALPHA TESTING ONLY: REMOVE
         }
     }
 
@@ -56,6 +59,8 @@ export class UserInfoStore {
             this.userType = userTypes.TEACHER;
         }else if(googleInfo.user.email == "thienvietngomai@gmail.com" == 1){
             this.userType = userTypes.TEACHER;
+        }else if(googleInfo.user.email.indexOf("@gmail.com") != -1){ //ALPHA TESTING ONLY: REMOVE
+            this.userType = userTypes.TEACHER //ALPHA TESTING ONLY: REMOVE
         }else if(googleInfo.user.email == "" == 1){
             //admins go here
             this.userType = userTypes.ADMIN;

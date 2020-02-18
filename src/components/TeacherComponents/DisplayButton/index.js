@@ -16,10 +16,14 @@ class DisplayButton extends Component {
         this.state = ({
             status: "none",
             studentName: "",
+            signedUpIn: "",
             present: false,
             late: false,
             absent: false,
-            required: false,
+            requiredByMe: false,
+            requiredByDiff: false,
+
+            loaded: false,
         });
 
         this.ref =  firebase.firestore().collection('Students').doc(this.props.name);
@@ -30,22 +34,32 @@ class DisplayButton extends Component {
         this.lateColor = "#dedede";
         this.absentIcon = "md-radio-button-off";
         this.absentColor = "#dedede";
-        
-        this.requireColor = "#2196F3";
-        this.requireText = "Require";
 
         this.currentTeacher = firebase.auth().currentUser.displayName;
     }
 
     componentDidMount(){
-        this.getStudentNames();
+        this.getFirestoreData();
         console.log(this.props.name)
     }
 
-    getStudentNames = async () => {
+    getFirestoreData = async () => {
         this.ref.get().then((doc) => {
             if(doc.exists) {
                 this.setState({studentName: doc.data().Name})
+
+                signedUpInRef = doc.data().SignedUpWith;
+                requiredByRef = doc.data().Required;
+
+                if(requiredByRef==="Viet Ngomai"){//required by signed in teacher
+                    this.setState({requiredByMe: true})
+                }else if(requiredByRef===""){//not required
+                    this.setState({signedUpIn: signedUpInRef})
+                }else{
+                    this.setState({signedUpIn: requiredByRef})
+                    this.setState({requiredByDiff: true})
+                }
+                this.setState({loaded: true});
             }else{
                 console.warn("No student document exists");
             }
@@ -124,27 +138,27 @@ class DisplayButton extends Component {
             this.absentColor = 'red';
         }
     }
-
+    
     switchRequire = (type) => {
         if(type){
-            this.setState({required: true});
+            this.setState({requiredByMe: true});
             this.requireColor = 'green';
             this.requireText = "Required";
             this.requireStudent(true);
         }else{
-            this.setState({required: false});
+            this.setState({requiredByMe: false});
             this.requireColor = "#2196F3";
             this.requireText = "Require";
             this.requireStudent(false);
         }
     }
-
+    
     render() {
-        const { container, name, surface, surfaceRequire, presentButton, lateButton, absentButton, requireButton} = styles;
+        const { container, name, nameSplit, surface, signedUpInText, requiredByText, surfaceRequire, presentButton, lateButton, absentButton, requireButton} = styles;
 
-        const AttendanceButton = (
-            <TouchableHighlight>
-                <Surface style={surface, {margin: 5}}>
+        attendanceLoading = () => {
+            if(this.state.loaded){
+                return(
                     <View style={container}>
                         <View style={name}>
                             <Text>{this.state.studentName}</Text>
@@ -165,36 +179,133 @@ class DisplayButton extends Component {
                             </View>
                         </TouchableWithoutFeedback>
                     </View>
+                )
+            }else{
+                return(
+                    <View></View>
+                )
+            }
+        }
+
+        const AttendanceButton = (
+            <TouchableHighlight>
+                <Surface style={surface, {margin: 5}}>
+                    {/*<View style={container}>*/}
+                        {attendanceLoading()}
+                    {/* </View> */}
                 </Surface>
             </TouchableHighlight>
         )
 
-        const RequireButton = (
-            <TouchableHighlight>
-                <Surface style={surface, {marginVertical: 5}}>
-                    <View style={container}>
-                        <View style={name}>
+        const RequireButton = () => {
+            if(this.state.loaded){
+                if(this.state.requiredByMe){
+                    this.requireColor = "green";
+                    this.requireText = "Required";
+                    rendering = (
+                        <View style={requireButton}>
+                            <Button title={this.requireText} onPress={()=>{this.switchRequire(!this.state.requiredByMe)}} color={this.requireColor}/>
+                        </View>
+                    )
+                }else if(this.state.requiredByDiff){
+                    // this.requireColor = "red";
+                    this.requireText = "Required by "+this.state.signedUpIn;
+                    rendering = (
+                        <View style={requireButton}>
+                            <Button title={this.requireText} onPress={()=>{this.switchRequire(!this.state.requiredByMe)}} color={this.requireColor} disabled={true}/>
+                        </View>
+                    )
+                }else{
+                    this.requireColor = "#2196F3";
+                    this.requireText = "Require";
+                    rendering = (
+                        <View style={requireButton}>
+                            <Button title={this.requireText} onPress={()=>{this.switchRequire(!this.state.requiredByMe)}} color={this.requireColor}/>
+                        </View>
+                    )
+                }
+                return(
+                    <TouchableHighlight>
+                        <Surface style={surface, {marginVertical: 5}}>
+                            <View style={container}>
+                                <View style={name}>
+                                    <Text>{this.state.studentName}</Text>
+                                </View>
+                                {rendering}
+                            </View>
+                        </Surface>
+                    </TouchableHighlight>
+                )
+            }else{
+                return(<View></View>)
+            }
+        }
+        
+        searchText = () => {
+            if(this.state.requiredByMe){
+                return(
+                    <View style={requiredByText}>
+                        <Text style={{fontSize: 10}}>Required by:</Text>
+                        <Text>You</Text>
+                    </View>
+                )
+            }else if(this.state.requiredByDiff){
+                return(
+                    <View style={requiredByText}>
+                        <Text style={{fontSize: 10}}>Required by:</Text>
+                        <Text>{this.state.signedUpIn}</Text>
+                    </View>
+                )
+            }else{
+                return(
+                    <View style={signedUpInText}>
+                        <Text>{this.state.signedUpIn}</Text>
+                    </View>
+                )
+            }
+        }
+
+        const SearchButton = (
+            <Surface style={surface, {margin: 5}}>
+                <View style={container}>
+                    <View style={nameSplit}>
+                        <View>
                             <Text>{this.state.studentName}</Text>
                         </View>
-                        <View style={requireButton}>
-                            <Button title={this.requireText} onPress={()=>{this.switchRequire(!this.state.required)}} color={this.requireColor}/>
-                        </View>
+                        {searchText()}
                     </View>
-                </Surface>
-            </TouchableHighlight>
+                </View>
+            </Surface>
+        )
+
+
+        const TextDisplay = (
+            <Surface style={surface, {margin: 5}}>
+                <View style={container}>
+                    <Text style={{marginLeft: 10}}>{this.props.name}</Text>
+                </View>
+            </Surface>
         )
 
         if(this.props.type==="require"){
             return(
-                RequireButton
+                RequireButton()
             )
         }else if(this.props.type==="attendance"){
             return(
                 AttendanceButton
             )
+        }else if(this.props.type==="search"){
+            return(
+                SearchButton
+            )
+        }else if(this.props.type==="textDisplay"){
+            return(
+                TextDisplay
+            )
         }else{
             return(
-                AttendanceButton
+                <Text>Display button not found</Text>
             )
         }
     }

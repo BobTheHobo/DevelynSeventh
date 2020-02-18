@@ -29,9 +29,7 @@ export default TeacherRequire = (props) => {
                     data={students}
                     renderItem={({item, index}) => {
                         return(
-                            <View>
-                                <DisplayButton name={item} type={"require"}/>
-                            </View>
+                            <DisplayButton name={item} type={"require"}/>
                         )
                     }}
                     keyExtractor={(item, index) => item}

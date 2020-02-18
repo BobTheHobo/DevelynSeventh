@@ -15,6 +15,22 @@ export default StyleSheet.create({
         justifyContent: 'center',
         height:60,
     },
+    nameSplit:{
+        flex: 1,
+        marginHorizontal: 10,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        height: 60,
+    },
+    signedUpInText:{
+        width: 100,
+        flexDirection: 'row',
+    },
+    requiredByText:{
+        width: 100,
+        flexDirection: 'column',
+    },
     surface:{
         flex:1,
         //margin:5,

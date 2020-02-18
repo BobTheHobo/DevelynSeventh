@@ -3,6 +3,7 @@ import { View, Text, SafeAreaView } from 'react-native'
 import styles from './styles'
 
 import AppHeader from '../../../components/NavigationComponents/AppHeader'
+import TeacherFindStudent from '../../../components/TeacherComponents/TeacherFindStudent';
 
 class TeacherPlanScreen extends Component {
     static navigationOptions = {
@@ -22,6 +23,7 @@ class TeacherPlanScreen extends Component {
                 </View>
 
                 <View style={infoDisp}>
+                    <TeacherFindStudent/>
                 </View>
 
             </View>

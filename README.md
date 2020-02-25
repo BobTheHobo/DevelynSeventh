@@ -1,30 +1,26 @@
-D'Evelyn 7th Hour app
+#D'Evelyn 7th Hour app
 
 Pardon the crappy code, especially the random switches between class and function components :)
 -Viet Ngomai
 
-ToDo: 
-Teacher pages:
+##ToDo: 
+###Teacher pages:
+- [] ***UPDATE ALL OF THE "VIET" TEACHER REFERENCES WITH WHOEVER'S SIGNED IN***
+- [] Seperate search bar into its own teacher component. Currently the Require and FindStudent screens are too interconnected to their respective search bars to seperate.
+- [] Give options in require screen to sort students alphabetically or by class
+- [] Notify teacher when they set their limit below the current amount of people already signed up
+- [] Fix "submit attendance" button
+- [] Fix time display. On Android it's in army time but on Apple it's in 12-hour
+- [] Debug
 
--!!!!!UPDATE ALL OF THE "VIET" TEACHER REFERENCES WITH WHOEVER'S SIGNED IN!!!!!!!1
+###Student pages:
+- [] Debug
 
--Seperate search bar into its own teacher component. Currently the Require and FindStudent screens are too interconnected to their respective search bars to seperate.
--Give options in require screen to sort students alphabetically or by class
--Notify teacher when they set their limit below the current amount of people already signed up
--Fix "submit attendance" button
--Fix time display. On Android it's in army time but on Apple it's in 12-hour
--Debug
+###App in general:
+- [] ***MAKE SURE AN ACCOUNT CAN ONLY BE LOGGED ON TO ONE DEVICE AT A TIME!***
+- [] Publish to google play store
+- [] Publish to app store
+- [] Add Tran's loading art
 
-
-
-Student pages:
--Debug
-
-App in general:
--!!!!!!MAKE SURE ONLY ONE ACCOUNT CAN BE LOGGED ON AT ONCE!!!!!!
--Publish to google play store
--Publish to app store
--Add Tran's loading art
-
-Web:
--Not started
+###Web:
+- [] Not started

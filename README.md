@@ -4,7 +4,7 @@ Pardon the crappy code
 
 ## Getting started:
 1. Install the React Native CLI (not the Expo CLI) using these instructions: https://reactnative.dev/docs/getting-started.html#content
-2. Clone this repo ```git clone https://github.com/BobTheHobo/DevelynSeventh.git```
+2. Clone this repo ```git clone https://github.com/YOUR-USERNAME/DevelynSeventh.git```
 3. Run ```npm install``` inside the root directory
 4. Use ```react-native run-android``` or ```react-native run-ios``` inn the root directory for android and ios respectively.
 

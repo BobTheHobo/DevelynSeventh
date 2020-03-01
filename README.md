@@ -13,8 +13,7 @@ Pardon the crappy code
 #### Important: 
 - [ ] ***UPDATE ALL OF THE "VIET" TEACHER REFERENCES WITH WHOEVER'S SIGNED IN***
 - [x] Fix "submit attendance" button
-- [ ] Sort students alphabetically
-- [ ] Also sort students by class (Might have to reorganize firestore :weary:)
+- [ ] Sort students alphabetically and by class (Reorganize firestore, I can't figure out a way to sort it in the code without checking every student's database entries :weary:)
 - [ ] Notify teacher when they set their limit below the current amount of people already signed up
 - [ ] Debug
 #### Not so important:

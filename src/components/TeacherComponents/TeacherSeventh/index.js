@@ -15,7 +15,8 @@ class TeacherSeventh extends Component {
             currentNum:0,
             maxNum:0,
             submitted: false,
-            submitTitle: 'Submit Attendance'
+            submitTitle: 'Submit Attendance',
+            butColor: '#2196F3'
         });
 
         this.ref = firebase.firestore().collection('Teachers').doc("Viet");
@@ -30,6 +31,10 @@ class TeacherSeventh extends Component {
                 maxNum: doc.data().Max,
                 submitted: doc.data().AttendanceSubmitted
             });
+            if(this.state.submitted){
+                this.setState({submitTitle: 'Attendance Submitted!'});
+                this.setState({butColor: 'green'});
+            }
         });
     }
 
@@ -49,28 +54,43 @@ class TeacherSeventh extends Component {
         })
     }
 
-    submitConfirm = () => {
-        let prompt = "Submit Attendance";
-        if(this.state.submitted){
-            prompt = "Resubmit?"
-        }
+    submitConfirm = (prompt) => {
         Alert.alert(
             prompt,
             "",
             [
-              {text: "Yes", onPress: () => this.submitAttendance()},
-              {text: "Cancel"}
+                {text: "Yes", onPress: () => {
+                    if(prompt === "Revoke Submission?"){
+                        this.ref.update({
+                            AttendanceSubmitted: false
+                        })
+                        this.setState({submitted: false});
+                        this.setState({submitTitle: "Submit Attendance"})
+                        this.setState({butColor: '#2196F3'});
+                    }else if(prompt === "Submit Attendance?"){
+                        this.ref.update({
+                            AttendanceSubmitted : true
+                        });
+                        this.setState({submitted: true});
+                        this.setState({submitTitle: "Attendance Submitted!"});
+                        this.setState({butColor: 'green'});
+                    }else{
+                        console.warn("Something went wrong w/ submission")
+                    }
+                    
+                }},
+                {text: "Cancel"},
             ],
             {cancelable: false},
         );
     }
 
     submitAttendance(){
-        this.ref.update({
-            AttendanceSubmitted : true
-        });
-        this.state.submitted = true;
-        this.setState({submitTitle: "Attendance Submitted!"});
+        if(!this.state.submitted){
+            this.submitConfirm("Submit Attendance?");
+        }else{
+            this.submitConfirm("Revoke Submission?");
+        }
     }
 
     render() {
@@ -106,8 +126,8 @@ class TeacherSeventh extends Component {
                         keyExtractor={(item, index) => item}
                     >
                 </FlatList>
-
-                <Button title={this.state.submitTitle} onPress={() => this.submitConfirm()}/>
+                
+                <Button title={this.state.submitTitle} color={this.state.butColor} onPress={() => this.submitAttendance()}/>
             </View>
         )
 

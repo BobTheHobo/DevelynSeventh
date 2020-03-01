@@ -59,7 +59,7 @@ class SignUpButton extends Component {
         var hour = d.getHours();
         var min = d.getMinutes();
 
-        console.warn(hour+' '+min);
+        //console.warn(hour+' '+min);
 
         if((hour == 13 && min >=45) || (hour == 14 && min < 30)) {
             return true;    
@@ -172,12 +172,8 @@ class SignUpButton extends Component {
                         </View>
                         <View style={teacher}>
                             <View style={split}>
-                                {/* <View style={{flex: 1}}> */}
                                     <Text style={name}>{this.props.teacher}</Text>
-                                {/* </View>
-                                <View style={{flex:1}}> */}
                                     <Text style={plan}>{this.state.plan}</Text>
-                                {/* </View> */}
                             </View>
                         </View>
                         {this.fullIndicator()}

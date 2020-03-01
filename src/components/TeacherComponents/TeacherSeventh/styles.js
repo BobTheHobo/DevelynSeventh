@@ -5,10 +5,11 @@ export default StyleSheet.create({
         flexDirection: 'column',
         marginRight: 5,
         marginLeft: 5,
+        paddingBottom: 15,
         borderColor: 'grey',
         borderBottomWidth: 1,
         borderTopWidth: 1,
-        paddingTop: 10
+        paddingTop: 10,
     },
     signedUpIn: {
         fontSize: 15,

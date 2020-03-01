@@ -14,16 +14,22 @@ Pardon the crappy code
 - [ ] Seperate search bar into its own teacher component. Currently the Require and FindStudent screens are too interconnected to their respective search bars to seperate.
 - [ ] Give options in require screen to sort students alphabetically or by class
 - [ ] Notify teacher when they set their limit below the current amount of people already signed up
-- [ ] Fix "submit attendance" button
+- [x] Fix "submit attendance" button
 - [ ] Fix time display. On Android it's in army time but on Apple it's in 12-hour
 - [ ] Debug
 
 ### Student pages:
+- [ ] Prevent students from signing in after 1:45
 - [ ] Debug
+
+### Admin:
+- [ ] Reset teacher's max, plan, studentssignedup, and attendancesubmitted everyday (Find out more about how it currently works)
+- [ ] Publish a full attendance report, in google sheets probably (Also find out more about this)
+- [ ] More tools for database editing/creation
 
 ### App in general:
 - [ ] ***MAKE SURE AN ACCOUNT CAN ONLY BE LOGGED ON TO ONE DEVICE AT A TIME!***
-- [ ] Provide instructions on how to clone repo and run app
+- [x] Provide instructions on how to clone repo and run app
 - [ ] Publish to google play store
 - [ ] Publish to app store
 - [ ] Add Tran's loading art

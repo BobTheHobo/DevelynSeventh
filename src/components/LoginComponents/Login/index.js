@@ -49,7 +49,8 @@ export default Login = observer((props) => {
 						onPress={() => onSignInPress()}
 						disabled={store.isSigninInProgress}
 					/>
-                    <Button title="sign out" onPress={()=>signOut()}/>
+                    
+                    {/* <Button title="sign out" onPress={()=>signOut()}/> */}
 				</View>
 			)
 		}
@@ -156,6 +157,8 @@ export default Login = observer((props) => {
             } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
                 this.showSignInError("Play Services not available or outdated. Please update.")
                 await this.getGooglePlayServices();
+            }else if(error.code === statusCodes.NETWORK_ERROR) {
+                this.showSignInError("No internet access");
             } else {
 				//this.showSignInError(JSON.stringify(error));
 				this.showSignInError(error+"");

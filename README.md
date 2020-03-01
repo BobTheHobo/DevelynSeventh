@@ -10,13 +10,16 @@ Pardon the crappy code
 
 ## ToDo: 
 ### Teacher pages:
+#### Important: 
 - [ ] ***UPDATE ALL OF THE "VIET" TEACHER REFERENCES WITH WHOEVER'S SIGNED IN***
-- [ ] Seperate search bar into its own teacher component. Currently the Require and FindStudent screens are too interconnected to their respective search bars to seperate.
-- [ ] Give options in require screen to sort students alphabetically or by class
-- [ ] Notify teacher when they set their limit below the current amount of people already signed up
 - [x] Fix "submit attendance" button
-- [ ] Fix time display. On Android it's in army time but on Apple it's in 12-hour
+- [ ] Sort students alphabetically
+- [ ] Also sort students by class (Might have to reorganize firestore :weary:)
+- [ ] Notify teacher when they set their limit below the current amount of people already signed up
 - [ ] Debug
+#### Not so important:
+- [ ] Seperate search bar into its own teacher component. Currently the Require and FindStudent screens are too interconnected to their respective search bars to seperate.
+- [ ] Fix time display. On Android it's in army time but on Apple it's in 12-hour
 
 ### Student pages:
 - [ ] Prevent students from signing in after 1:45
